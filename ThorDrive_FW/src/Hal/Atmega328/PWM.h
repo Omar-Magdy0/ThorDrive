@@ -2,8 +2,9 @@
 #define TIMER2_PWM_H
 
 #include <avr/io.h>
-#include <stdint.h>
+#include "GPIO.h"
 
+extern GPIO_t GPIO1;
 // Prescaler options (you can add more if needed)
 #define TIMER2_NO_PRESCALER   1
 #define TIMER2_PRESCALER_8    2
@@ -23,6 +24,8 @@
 
 // Function Prototypes
 
+typedef struct PWM_struct{
+
 // Initialize Timer2 for Fast PWM mode (on OC2A or OC2B)
 void timer2PWM_Init(uint8_t channel, uint8_t prescaler);
 
@@ -31,5 +34,8 @@ void timer2SetDutyCycle(uint8_t channel, uint8_t duty);
 
 // Optional: Stop PWM
 void timer2Stop(void);
+
+}PWM;
+
 
 #endif // TIMER2_PWM_H
