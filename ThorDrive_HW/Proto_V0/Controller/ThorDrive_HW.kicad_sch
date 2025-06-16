@@ -974,6 +974,171 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:Conn_01x02_Socket"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02_Socket"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x02_Socket_1_1"
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -0.508 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -2.54) (xy -0.508 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -0.508)
+					(mid -0.5058 0)
+					(end 0 0.508)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -3.048)
+					(mid -0.5058 -2.54)
+					(end 0 -2.032)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector:Conn_01x03_Socket"
 			(pin_names
 				(offset 1.016)
@@ -4534,6 +4699,89 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim yes)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Switch:SW_Push"
 			(pin_numbers
 				(hide yes)
@@ -5037,10 +5285,22 @@
 		)
 	)
 	(junction
+		(at 149.86 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "03b86187-5337-4a89-b00d-9b11590150ef")
+	)
+	(junction
 		(at 96.52 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "07d8cc1d-a1de-4671-85d0-181a7c77bcef")
+	)
+	(junction
+		(at 156.21 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "09518a93-3da3-4cb5-b970-8ff82f388932")
 	)
 	(junction
 		(at 50.8 19.05)
@@ -5067,10 +5327,34 @@
 		(uuid "1d9dd810-2670-4473-9454-1cf4003016a8")
 	)
 	(junction
+		(at 127 92.71)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2b34206b-1cba-4558-9f92-95fc54503e3a")
+	)
+	(junction
+		(at 100.33 92.71)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "45b99030-78e5-4bea-b612-e456b71b25c5")
+	)
+	(junction
+		(at 165.1 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4847c780-033b-4cb3-87d2-edbcf4d8c82d")
+	)
+	(junction
 		(at 119.38 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4d7a8ae9-629e-4f25-84d2-dcd0eb68b21b")
+	)
+	(junction
+		(at 161.29 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5071bb29-5a2c-4355-8648-5c7024ef1252")
 	)
 	(junction
 		(at 33.02 132.08)
@@ -5109,6 +5393,24 @@
 		(uuid "bf7152bd-157c-403f-be49-17fdce1e0977")
 	)
 	(junction
+		(at 151.13 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c191d865-72ad-4cac-afc9-966035924ea7")
+	)
+	(junction
+		(at 111.76 92.71)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cfbc8d63-c205-483a-9183-6c9dc4570e38")
+	)
+	(junction
+		(at 172.72 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d442096f-e3b5-4434-9f5d-f8e33315f1c1")
+	)
+	(junction
 		(at 161.29 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5144,9 +5446,15 @@
 		(at 60.96 154.94)
 		(uuid "9c96e71a-a851-4245-a528-09b17303c69d")
 	)
-	(no_connect
-		(at 64.77 39.37)
-		(uuid "cff77bc4-35ab-4bfa-8a4c-6059572beb89")
+	(wire
+		(pts
+			(xy 172.72 104.14) (xy 172.72 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "021a68a0-d3ae-4d0f-8763-00b2913ceeed")
 	)
 	(wire
 		(pts
@@ -5167,6 +5475,16 @@
 			(type default)
 		)
 		(uuid "04f10b1d-3f85-4ae7-9ab1-ed96669a2070")
+	)
+	(wire
+		(pts
+			(xy 26.67 173.99) (xy 20.32 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "053c32d5-c64f-48e4-b2be-57f651953689")
 	)
 	(wire
 		(pts
@@ -5210,6 +5528,16 @@
 	)
 	(wire
 		(pts
+			(xy 149.86 118.11) (xy 149.86 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c5421ac-808e-4690-b4a8-b8ad9441c9fe")
+	)
+	(wire
+		(pts
 			(xy 213.36 29.21) (xy 218.44 29.21)
 		)
 		(stroke
@@ -5227,6 +5555,16 @@
 			(type default)
 		)
 		(uuid "0ec2289f-94c5-4869-8a26-bec25cf5f13b")
+	)
+	(wire
+		(pts
+			(xy 165.1 104.14) (xy 172.72 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f2c36d9-6958-426b-a75e-834b55f9a0cd")
 	)
 	(wire
 		(pts
@@ -5260,7 +5598,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 120.65) (xy 224.79 120.65)
+			(xy 217.17 120.65) (xy 222.25 120.65)
 		)
 		(stroke
 			(width 0)
@@ -5277,6 +5615,16 @@
 			(type default)
 		)
 		(uuid "15c45169-2469-4867-a564-8227bfa338ad")
+	)
+	(wire
+		(pts
+			(xy 100.33 92.71) (xy 100.33 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1662f806-09c0-478a-b353-d92895d181f6")
 	)
 	(wire
 		(pts
@@ -5327,6 +5675,16 @@
 			(type default)
 		)
 		(uuid "211cca4c-0d8c-4bd8-b8e1-dfb671d6bc45")
+	)
+	(wire
+		(pts
+			(xy 165.1 125.73) (xy 165.1 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "222fe1a9-deb7-4f23-b136-4e7c14502500")
 	)
 	(wire
 		(pts
@@ -5430,13 +5788,13 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 179.07) (xy 25.4 179.07)
+			(xy 142.24 118.11) (xy 142.24 115.57)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2c538216-7d96-4502-b489-1842a59dcfd9")
+		(uuid "2c75c1cf-48b4-41b3-92b3-554759e6f169")
 	)
 	(wire
 		(pts
@@ -5447,6 +5805,26 @@
 			(type default)
 		)
 		(uuid "2e1077c2-0881-41d3-9b01-2f3cbcedf253")
+	)
+	(wire
+		(pts
+			(xy 142.24 125.73) (xy 142.24 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e9465a4-dcd1-4f2d-9b24-fc0c60a4fc72")
+	)
+	(wire
+		(pts
+			(xy 102.87 92.71) (xy 100.33 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e963c4b-aa3a-4df0-9103-43b154d10fe0")
 	)
 	(wire
 		(pts
@@ -5480,6 +5858,26 @@
 	)
 	(wire
 		(pts
+			(xy 172.72 104.14) (xy 179.07 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34fb2e09-06c4-4425-9811-3aa1a2240e47")
+	)
+	(wire
+		(pts
+			(xy 142.24 104.14) (xy 149.86 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3528ed7c-05a6-4110-8525-ef4411864600")
+	)
+	(wire
+		(pts
 			(xy 147.32 30.48) (xy 147.32 27.94)
 		)
 		(stroke
@@ -5497,16 +5895,6 @@
 			(type default)
 		)
 		(uuid "37ffafc6-2b17-4ab3-9696-c6872a994127")
-	)
-	(wire
-		(pts
-			(xy 20.32 189.23) (xy 25.4 189.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "38840ca0-7f5c-4cff-b3fa-96fa035cda7a")
 	)
 	(wire
 		(pts
@@ -5530,6 +5918,16 @@
 	)
 	(wire
 		(pts
+			(xy 149.86 104.14) (xy 156.21 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3cddce9e-1029-4bbb-bf6f-a59470b8215d")
+	)
+	(wire
+		(pts
 			(xy 22.86 176.53) (xy 26.67 176.53)
 		)
 		(stroke
@@ -5540,7 +5938,17 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 86.36) (xy 161.29 86.36)
+			(xy 111.76 100.33) (xy 111.76 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d3f6b40-a293-497c-bde6-e649ad89f9cb")
+	)
+	(wire
+		(pts
+			(xy 144.78 86.36) (xy 151.13 86.36)
 		)
 		(stroke
 			(width 0)
@@ -5700,6 +6108,16 @@
 	)
 	(wire
 		(pts
+			(xy 165.1 118.11) (xy 165.1 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4fe31533-baf8-455e-aa3b-03b3f85c1c5b")
+	)
+	(wire
+		(pts
 			(xy 190.5 26.67) (xy 185.42 26.67)
 		)
 		(stroke
@@ -5720,13 +6138,23 @@
 	)
 	(wire
 		(pts
-			(xy 15.24 173.99) (xy 26.67 173.99)
+			(xy 110.49 92.71) (xy 111.76 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "52e46f3c-8c11-4bf7-8802-7c2d329b8253")
+		(uuid "51d88446-ac30-400b-9cac-3ef06e5d4472")
+	)
+	(wire
+		(pts
+			(xy 161.29 104.14) (xy 165.1 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "535d737c-387e-41d5-b626-4b2407b69a1b")
 	)
 	(wire
 		(pts
@@ -5737,6 +6165,16 @@
 			(type default)
 		)
 		(uuid "53da4994-8a17-4def-8f29-7bc5e534fc8a")
+	)
+	(wire
+		(pts
+			(xy 161.29 99.06) (xy 161.29 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55acac74-877d-423d-80de-5a45b66a8c12")
 	)
 	(wire
 		(pts
@@ -5790,13 +6228,13 @@
 	)
 	(wire
 		(pts
-			(xy 20.32 185.42) (xy 20.32 189.23)
+			(xy 156.21 104.14) (xy 156.21 107.95)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5c2e18ed-63b6-4f6c-b9dd-ac61fb7e378f")
+		(uuid "58ac0c6b-61df-46d1-b6bf-ea90e8bbc198")
 	)
 	(wire
 		(pts
@@ -5807,6 +6245,16 @@
 			(type default)
 		)
 		(uuid "5f0d09c6-1dc6-4313-837e-648581fcecf3")
+	)
+	(wire
+		(pts
+			(xy 151.13 83.82) (xy 151.13 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5fd71be4-b83d-4061-bf56-2616dfcc8f51")
 	)
 	(wire
 		(pts
@@ -5830,6 +6278,16 @@
 	)
 	(wire
 		(pts
+			(xy 127 92.71) (xy 129.54 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6457784d-e086-46e5-bc90-4980e2bd2fac")
+	)
+	(wire
+		(pts
 			(xy 182.88 76.2) (xy 189.23 76.2)
 		)
 		(stroke
@@ -5837,6 +6295,16 @@
 			(type default)
 		)
 		(uuid "64d1e00d-da4a-4fe7-8a71-d886183ccb46")
+	)
+	(wire
+		(pts
+			(xy 156.21 104.14) (xy 161.29 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "664aced3-aa0d-496c-a4c7-d84194242286")
 	)
 	(wire
 		(pts
@@ -5877,6 +6345,16 @@
 			(type default)
 		)
 		(uuid "6b018688-a51f-4fbb-a161-783205a56df4")
+	)
+	(wire
+		(pts
+			(xy 142.24 107.95) (xy 142.24 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71a895b6-22a0-43c5-8afc-b5c21c452204")
 	)
 	(wire
 		(pts
@@ -5960,16 +6438,6 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 179.07) (xy 25.4 189.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7c316a07-04d8-4295-9410-ac8b2caefdf2")
-	)
-	(wire
-		(pts
 			(xy 214.63 73.66) (xy 218.44 73.66)
 		)
 		(stroke
@@ -5997,6 +6465,16 @@
 			(type default)
 		)
 		(uuid "7e1da83d-25cd-4e10-b3fa-b08c2732d260")
+	)
+	(wire
+		(pts
+			(xy 179.07 118.11) (xy 179.07 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e73632c-69c6-4f15-b583-71e10246d900")
 	)
 	(wire
 		(pts
@@ -6030,6 +6508,16 @@
 	)
 	(wire
 		(pts
+			(xy 247.65 58.42) (xy 261.62 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80999713-a317-4c8a-b185-c69f77e7ff94")
+	)
+	(wire
+		(pts
 			(xy 64.77 36.83) (xy 71.12 36.83)
 		)
 		(stroke
@@ -6060,6 +6548,26 @@
 	)
 	(wire
 		(pts
+			(xy 20.32 179.07) (xy 20.32 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83c1d2cc-91d9-4bd3-a6b3-3a0cdf28f8e9")
+	)
+	(wire
+		(pts
+			(xy 20.32 179.07) (xy 26.67 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "856756a1-28ab-4006-8be2-0dd102b718ee")
+	)
+	(wire
+		(pts
 			(xy 147.32 48.26) (xy 147.32 50.8)
 		)
 		(stroke
@@ -6077,6 +6585,16 @@
 			(type default)
 		)
 		(uuid "89cae561-a278-4ab9-843c-53450a828063")
+	)
+	(wire
+		(pts
+			(xy 247.65 40.64) (xy 247.65 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89e7b83f-4884-423b-8200-19756460f815")
 	)
 	(wire
 		(pts
@@ -6160,6 +6678,16 @@
 	)
 	(wire
 		(pts
+			(xy 156.21 118.11) (xy 156.21 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "929c7a06-d0da-4062-9725-89dcb222a91d")
+	)
+	(wire
+		(pts
 			(xy 254 125.73) (xy 250.19 125.73)
 		)
 		(stroke
@@ -6237,6 +6765,26 @@
 			(type default)
 		)
 		(uuid "a18241e5-8b63-436e-a314-aed6ed7e60ba")
+	)
+	(wire
+		(pts
+			(xy 119.38 100.33) (xy 127 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2fa2935-80fe-4dc5-ae68-1d7e60ade36c")
+	)
+	(wire
+		(pts
+			(xy 149.86 125.73) (xy 149.86 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3a5d092-a3ec-45b5-9c32-f17382a9ef96")
 	)
 	(wire
 		(pts
@@ -6340,6 +6888,16 @@
 	)
 	(wire
 		(pts
+			(xy 247.65 48.26) (xy 247.65 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5df0123-7b36-495e-968f-8c7496bb54f0")
+	)
+	(wire
+		(pts
 			(xy 127 40.64) (xy 119.38 40.64)
 		)
 		(stroke
@@ -6367,6 +6925,16 @@
 			(type default)
 		)
 		(uuid "baff0062-2799-4831-9fa6-f3a5f2278351")
+	)
+	(wire
+		(pts
+			(xy 111.76 92.71) (xy 113.03 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bb42b811-427f-4a79-a07b-b6604a10969e")
 	)
 	(wire
 		(pts
@@ -6410,6 +6978,36 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 88.9) (xy 129.54 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0cf011d-c5e3-4a60-b8da-255473700673")
+	)
+	(wire
+		(pts
+			(xy 172.72 125.73) (xy 172.72 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1ffcb04-4b7d-46bd-8774-0e0e402402fc")
+	)
+	(wire
+		(pts
+			(xy 116.84 100.33) (xy 111.76 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c33b1ea1-6c41-486b-82a5-c7e6ae880ae8")
+	)
+	(wire
+		(pts
 			(xy 33.02 118.11) (xy 45.72 118.11)
 		)
 		(stroke
@@ -6430,6 +7028,26 @@
 	)
 	(wire
 		(pts
+			(xy 156.21 125.73) (xy 156.21 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c635cb3b-fb29-4f83-93fb-b1a2c5bb692d")
+	)
+	(wire
+		(pts
+			(xy 149.86 104.14) (xy 149.86 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c6822067-1832-4926-856e-2b66732bfb65")
+	)
+	(wire
+		(pts
 			(xy 213.36 31.75) (xy 213.36 33.02)
 		)
 		(stroke
@@ -6437,6 +7055,16 @@
 			(type default)
 		)
 		(uuid "cb009c9b-6f7c-4457-bb8f-f153aa29ee88")
+	)
+	(wire
+		(pts
+			(xy 179.07 104.14) (xy 179.07 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cbb50312-75e3-4387-bcd9-a0c1439ae56a")
 	)
 	(wire
 		(pts
@@ -6480,6 +7108,16 @@
 	)
 	(wire
 		(pts
+			(xy 172.72 118.11) (xy 172.72 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d04026fb-f4f1-453b-b810-43192b910e19")
+	)
+	(wire
+		(pts
 			(xy 106.68 40.64) (xy 106.68 41.91)
 		)
 		(stroke
@@ -6520,6 +7158,16 @@
 	)
 	(wire
 		(pts
+			(xy 20.32 173.99) (xy 20.32 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6e5fb7a-4b9b-40d9-a7ae-34d8d202441b")
+	)
+	(wire
+		(pts
 			(xy 59.69 177.8) (xy 60.96 177.8)
 		)
 		(stroke
@@ -6527,6 +7175,16 @@
 			(type default)
 		)
 		(uuid "d7500542-5c03-4db3-882f-a1a06d8294bc")
+	)
+	(wire
+		(pts
+			(xy 165.1 107.95) (xy 165.1 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d81f0db4-0788-4b93-a6e0-2645aa641fa7")
 	)
 	(wire
 		(pts
@@ -6560,6 +7218,16 @@
 	)
 	(wire
 		(pts
+			(xy 151.13 86.36) (xy 161.29 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dcd029e1-d1ec-48ae-a9cb-a307a60f44e5")
+	)
+	(wire
+		(pts
 			(xy 250.19 125.73) (xy 250.19 128.27)
 		)
 		(stroke
@@ -6580,13 +7248,13 @@
 	)
 	(wire
 		(pts
-			(xy 15.24 175.26) (xy 15.24 173.99)
+			(xy 247.65 30.48) (xy 261.62 30.48)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e00176cb-e24d-4557-8799-974c90b3dbfc")
+		(uuid "e1889757-1683-4d93-ab63-959a22067867")
 	)
 	(wire
 		(pts
@@ -6597,6 +7265,16 @@
 			(type default)
 		)
 		(uuid "e2249da8-bc34-410a-b1da-1b32bcf2c3dc")
+	)
+	(wire
+		(pts
+			(xy 97.79 92.71) (xy 100.33 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e265e8d3-a5d7-4e97-a853-de6862c8e20a")
 	)
 	(wire
 		(pts
@@ -6630,7 +7308,17 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 123.19) (xy 224.79 123.19)
+			(xy 127 100.33) (xy 127 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e6a711b6-1532-42be-b661-a1308c1f3930")
+	)
+	(wire
+		(pts
+			(xy 217.17 123.19) (xy 222.25 123.19)
 		)
 		(stroke
 			(width 0)
@@ -6650,13 +7338,23 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 118.11) (xy 224.79 118.11)
+			(xy 217.17 118.11) (xy 222.25 118.11)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "eade7b3d-70f2-415d-a26e-129e66f6e707")
+	)
+	(wire
+		(pts
+			(xy 123.19 92.71) (xy 127 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed122dd0-cebf-4ba0-84c5-1f5498c4e15b")
 	)
 	(wire
 		(pts
@@ -6677,6 +7375,26 @@
 			(type default)
 		)
 		(uuid "edc82b7d-388c-4ec9-969e-251caaa948c5")
+	)
+	(wire
+		(pts
+			(xy 64.77 39.37) (xy 67.31 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eeb64f1f-4792-4b25-abf7-c334b25ae325")
+	)
+	(wire
+		(pts
+			(xy 179.07 125.73) (xy 179.07 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "efeb3f60-d64c-4094-bf2f-5b53f9b2f95f")
 	)
 	(wire
 		(pts
@@ -6760,7 +7478,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 115.57) (xy 224.79 115.57)
+			(xy 217.17 115.57) (xy 222.25 115.57)
 		)
 		(stroke
 			(width 0)
@@ -6814,7 +7532,7 @@
 	)
 	(global_label "Fault"
 		(shape input)
-		(at 156.21 86.36 180)
+		(at 144.78 86.36 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6824,7 +7542,29 @@
 		)
 		(uuid "0639c36e-6981-4a80-bb5d-74d1168e0bef")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 148.4473 86.36 0)
+			(at 137.0173 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "{slash}Logic_CL"
+		(shape input)
+		(at 179.07 128.27 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "096e2b17-fef6-4e35-97c6-96a5f0720deb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 179.07 140.8709 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6913,6 +7653,28 @@
 		(uuid "21e096d3-3e92-47ca-9843-cc3cd214dfed")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 170.1584 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "{slash}Logic_CH"
+		(shape input)
+		(at 156.21 128.27 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "352669f5-124e-4292-92b4-17bcc48b5c86")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 156.21 141.1733 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7032,6 +7794,28 @@
 			)
 		)
 	)
+	(global_label "CTRL_BUTT"
+		(shape input)
+		(at 67.31 39.37 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4f96ac09-ea68-4967-9e3e-ba8642f69712")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 80.3342 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "{slash}Logic_CH"
 		(shape input)
 		(at 214.63 76.2 180)
@@ -7045,6 +7829,28 @@
 		(uuid "53c02a30-bb53-4d94-b898-dc7e84396ff7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 201.7267 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "{slash}Logic_AL"
+		(shape input)
+		(at 165.1 128.27 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5449d7ec-9963-41a8-9865-4413ed74b52e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 165.1 140.6895 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7450,28 +8256,6 @@
 			)
 		)
 	)
-	(global_label "TX"
-		(shape input)
-		(at 217.17 144.78 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "8238aadc-e22a-4333-ac72-d2f0c2b8aa87")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 212.0077 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "PhaseB current"
 		(shape input)
 		(at 217.17 53.34 180)
@@ -7650,6 +8434,28 @@
 	)
 	(global_label "{slash}Logic_BL"
 		(shape input)
+		(at 172.72 128.27 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9f419145-9ee2-4530-b5ec-a9d6d8d47e38")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 172.72 140.8709 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "{slash}Logic_BL"
+		(shape input)
 		(at 182.88 81.28 180)
 		(fields_autoplaced yes)
 		(effects
@@ -7727,6 +8533,28 @@
 		(uuid "a4fcb80c-370c-42d1-9b92-1cae4ede3a1b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 170.2791 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "RX"
+		(shape input)
+		(at 217.17 144.78 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a581af5d-6bac-4172-b557-0ee61ed1b4a2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 211.7053 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7868,6 +8696,28 @@
 			)
 		)
 	)
+	(global_label "{slash}Logic_AH"
+		(shape input)
+		(at 142.24 128.27 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b0490614-2344-42cd-a8af-55bdc7298b59")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 142.24 140.9919 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "HallC"
 		(shape input)
 		(at 185.42 29.21 180)
@@ -7934,7 +8784,7 @@
 			)
 		)
 	)
-	(global_label "RX"
+	(global_label "TX"
 		(shape input)
 		(at 217.17 142.24 180)
 		(fields_autoplaced yes)
@@ -7944,9 +8794,9 @@
 			)
 			(justify right)
 		)
-		(uuid "cdc563ee-e096-4bd9-905a-f891138fba39")
+		(uuid "db40b59e-8a7c-42c4-95e4-e16f2293231b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 211.7053 142.24 0)
+			(at 212.0077 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8013,6 +8863,28 @@
 		(uuid "e4fb13ce-d408-4f96-8502-d8ac3dce9e43")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 169.9767 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CTRL_BUTT"
+		(shape input)
+		(at 97.79 92.71 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e5281fce-3e18-420c-8d44-295d3b68a3d6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 84.7658 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8106,6 +8978,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "{slash}Logic_BH"
+		(shape input)
+		(at 149.86 128.27 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "eee40f29-c897-47bd-b561-52d22107633e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 149.86 141.1733 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -8217,6 +9111,76 @@
 				)
 				(justify left)
 				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 151.13 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "01b27fd0-f550-4d2d-9c3a-7b3645f6b296")
+		(property "Reference" "R22"
+			(at 153.67 78.7399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 153.67 81.2799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 149.352 80.01 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 151.13 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 151.13 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cf8880b8-5dc9-4d87-867b-cedb1f7fa0f5")
+		)
+		(pin "2"
+			(uuid "0167fc28-74b1-4285-962f-d32b1808149f")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "R22")
+					(unit 1)
+				)
 			)
 		)
 	)
@@ -8494,17 +9458,87 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x03_Socket")
-		(at 259.08 123.19 0)
+		(lib_id "Device:R")
+		(at 179.07 121.92 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
+		(uuid "193a90ae-676d-47f4-af3f-f08e6085447b")
+		(property "Reference" "R21"
+			(at 181.61 120.6499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 181.61 123.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 177.292 121.92 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 179.07 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 179.07 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "29cd6685-f4a3-4f96-8279-483d0dceb03d")
+		)
+		(pin "1"
+			(uuid "ed258974-f53f-458a-bb32-dcd274ae2b42")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "R21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x03_Socket")
+		(at 259.08 123.19 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(uuid "1b9b7e59-9c83-4a73-998f-1f51d90bf0f1")
 		(property "Reference" "J3"
-			(at 260.35 121.9199 0)
+			(at 260.35 124.4601 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8513,7 +9547,7 @@
 			)
 		)
 		(property "Value" "Conn_01x03_Socket"
-			(at 260.35 124.4599 0)
+			(at 260.35 121.9201 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8558,9 +9592,87 @@
 			(uuid "e0a9a477-346d-4803-9ebf-bbd2ec33f551")
 		)
 		(instances
-			(project ""
+			(project "ThorDrive_HW"
 				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
 					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 149.86 111.76 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "20ce74ee-b2e8-47f8-912d-c0becf887e7f")
+		(property "Reference" "D8"
+			(at 151.384 112.776 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "BH"
+			(at 151.384 114.554 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D3.0mm"
+			(at 149.86 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 149.86 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 149.86 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 149.86 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "379b7107-834f-4cd7-864b-3816b722d858")
+		)
+		(pin "1"
+			(uuid "5bfd5e85-404a-43fc-94a8-732a83c5f3fd")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "D8")
 					(unit 1)
 				)
 			)
@@ -8714,7 +9826,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 15.24 175.26 0)
+		(at 20.32 180.34 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8723,7 +9835,7 @@
 		(fields_autoplaced yes)
 		(uuid "279f547b-81ce-4a7b-8f36-5f8a9e2f5eea")
 		(property "Reference" "#PWR017"
-			(at 15.24 181.61 0)
+			(at 20.32 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8732,7 +9844,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 15.24 180.34 0)
+			(at 20.32 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8740,7 +9852,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 15.24 175.26 0)
+			(at 20.32 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8749,7 +9861,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 15.24 175.26 0)
+			(at 20.32 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8758,7 +9870,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 15.24 175.26 0)
+			(at 20.32 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8773,6 +9885,70 @@
 			(project "ThorDrive_HW"
 				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
 					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 137.16 168.91 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "287bb89b-4b21-4d7e-bf49-da106b210278")
+		(property "Reference" "H2"
+			(at 139.7 167.6399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 139.7 170.1799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 137.16 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 137.16 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 137.16 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "H2")
 					(unit 1)
 				)
 			)
@@ -9161,16 +10337,16 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x08_Socket")
-		(at 223.52 78.74 0)
+		(at 223.52 81.28 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "3539cb4a-20c1-44d4-9661-260b5351f3b5")
 		(property "Reference" "J4"
-			(at 224.79 78.7399 0)
+			(at 224.79 81.2801 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9179,7 +10355,7 @@
 			)
 		)
 		(property "Value" "Conn_01x08_Socket"
-			(at 224.79 81.2799 0)
+			(at 224.79 78.7401 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9188,7 +10364,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_EH_B8B-EH-A_1x08_P2.50mm_Vertical"
-			(at 223.52 78.74 0)
+			(at 223.52 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9197,7 +10373,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 223.52 78.74 0)
+			(at 223.52 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9206,7 +10382,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x08, script generated"
-			(at 223.52 78.74 0)
+			(at 223.52 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9239,7 +10415,7 @@
 			(uuid "b6cd5db3-8f8a-4deb-a9d5-9f811174c8d6")
 		)
 		(instances
-			(project ""
+			(project "ThorDrive_HW"
 				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
 					(reference "J4")
 					(unit 1)
@@ -9249,16 +10425,16 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x06_Socket")
-		(at 224.79 50.8 0)
+		(at 224.79 53.34 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "35a0f733-49d4-4596-855a-409909153dee")
 		(property "Reference" "J2"
-			(at 226.06 50.7999 0)
+			(at 226.06 53.3401 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9267,7 +10443,7 @@
 			)
 		)
 		(property "Value" "Conn_01x06_Socket"
-			(at 226.06 53.3399 0)
+			(at 226.06 50.8001 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9276,7 +10452,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_EH_B6B-EH-A_1x06_P2.50mm_Vertical"
-			(at 224.79 50.8 0)
+			(at 224.79 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9285,7 +10461,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 224.79 50.8 0)
+			(at 224.79 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9294,7 +10470,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x06, script generated"
-			(at 224.79 50.8 0)
+			(at 224.79 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9321,7 +10497,7 @@
 			(uuid "c5998d42-5589-48ac-9f46-f7eeb965481f")
 		)
 		(instances
-			(project ""
+			(project "ThorDrive_HW"
 				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
 					(reference "J2")
 					(unit 1)
@@ -9347,8 +10523,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED"
-			(at 156.464 37.084 90)
+		(property "Value" "HALL_B"
+			(at 151.892 31.75 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9356,7 +10532,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
+		(property "Footprint" "LED_THT:LED_D3.0mm"
 			(at 154.94 34.29 0)
 			(effects
 				(font
@@ -9402,6 +10578,214 @@
 			(project "ThorDrive_HW"
 				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
 					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 118.11 92.71 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3ca47de8-e8fa-4b3d-9598-d252dd05d5a4")
+		(property "Reference" "SW3"
+			(at 118.11 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CTRL"
+			(at 118.11 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "libMain:SW_BUTT-2"
+			(at 118.11 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 118.11 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 118.11 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "51d1b161-1b73-40f5-9c05-1724d7ca45a6")
+		)
+		(pin "1"
+			(uuid "ffc90377-8a5e-4690-86b4-5b0f82873067")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "SW3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 100.33 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3fdab1df-adfd-4bd4-8267-8200b7042cb5")
+		(property "Reference" "C9"
+			(at 104.14 101.5999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 104.14 104.1399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+			(at 101.2952 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 100.33 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 100.33 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a647ac84-ee6b-493c-8a05-9cfc9d3d32bb")
+		)
+		(pin "2"
+			(uuid "7863d6b8-deca-4f75-ae0a-c2145df04936")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 156.21 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4ca76359-c183-4ca7-b770-07b7f0e4c9ad")
+		(property "Reference" "R18"
+			(at 158.75 120.6499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 158.75 123.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 154.432 121.92 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 156.21 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 156.21 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "88b789e0-1705-42d2-aad1-5831c3b67686")
+		)
+		(pin "1"
+			(uuid "69e2b54a-04d5-435f-a9c9-f8f7de63c5e5")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -9585,7 +10969,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "526d5a44-9c1e-44ca-a2a5-b56fb9557e9e")
 		(property "Reference" "D3"
 			(at 165.1 34.6074 90)
@@ -9596,8 +10979,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED"
-			(at 165.1 37.1474 90)
+		(property "Value" "HALL_C"
+			(at 162.306 31.242 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9605,7 +10988,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
+		(property "Footprint" "LED_THT:LED_D3.0mm"
 			(at 161.29 34.29 0)
 			(effects
 				(font
@@ -9651,6 +11034,211 @@
 			(project "ThorDrive_HW"
 				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
 					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 149.86 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "552cf624-bff3-48c1-b3c5-1c28e12439ae")
+		(property "Reference" "R17"
+			(at 152.4 120.6499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 152.4 123.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 148.082 121.92 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 149.86 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 149.86 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "cc31e85d-f9e2-4ef8-b2a6-114923df3e45")
+		)
+		(pin "1"
+			(uuid "5e256379-895f-452a-be39-3f6dc48929eb")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 247.65 44.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5ade7d2d-980f-46b0-8b97-fde9bd5d571c")
+		(property "Reference" "C8"
+			(at 251.46 43.1799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10u"
+			(at 251.46 45.7199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+			(at 248.6152 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 247.65 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 247.65 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f1634a86-1e60-4e8f-8910-c3a12267147a")
+		)
+		(pin "2"
+			(uuid "e4259ae1-7bb8-453f-b2e0-892b8fd6dfe1")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "C8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 100.33 106.68 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5f148a7c-3e7c-492e-8a00-1fe3a024a28d")
+		(property "Reference" "#PWR037"
+			(at 100.33 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 100.33 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 100.33 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 100.33 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 100.33 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "432f35ed-e5d1-4a0e-9d9a-ce9c3ea08481")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
@@ -9792,6 +11380,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 151.13 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "639516b3-274b-429c-a7b2-9c5983562ff1")
+		(property "Reference" "#PWR036"
+			(at 151.13 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 151.384 71.628 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 151.13 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 151.13 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 151.13 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c946aabb-2af9-4613-9607-716b87ed2354")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "#PWR036")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 276.86 52.07 0)
 		(unit 1)
@@ -9880,7 +11533,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "Fault"
+		(property "Value" "HALT"
 			(at 86.36 38.4174 90)
 			(effects
 				(font
@@ -9889,7 +11542,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
+		(property "Footprint" "LED_THT:LED_D3.0mm"
 			(at 82.55 35.56 0)
 			(effects
 				(font
@@ -10007,6 +11660,150 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 129.54 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6bd034d2-a032-4df4-9935-d493aeec26bf")
+		(property "Reference" "#PWR038"
+			(at 129.54 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 129.54 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 129.54 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 129.54 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 129.54 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1f6daffc-ddbd-4497-bb7d-0aaa6a961a4d")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "#PWR038")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 156.21 111.76 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6d5656e2-caa5-435e-9700-1fe2432f2fa0")
+		(property "Reference" "D9"
+			(at 160.02 112.0774 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "CH"
+			(at 158.75 114.554 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D3.0mm"
+			(at 156.21 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 156.21 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 156.21 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 156.21 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "51144d5b-f814-42b4-8820-619da478af1b")
+		)
+		(pin "1"
+			(uuid "111fcac5-b113-4562-950e-1e3e968fe661")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "D9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 185.42 33.02 0)
 		(unit 1)
@@ -10067,6 +11864,85 @@
 			(project "ThorDrive_HW"
 				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
 					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 179.07 111.76 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7259d7cf-e94f-4262-bba5-b09df9af2989")
+		(property "Reference" "D12"
+			(at 182.88 112.0774 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "CL"
+			(at 182.88 114.6174 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D3.0mm"
+			(at 179.07 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 179.07 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 179.07 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 179.07 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "5ff22f9d-565e-48cf-90f0-b90df7e2e8eb")
+		)
+		(pin "1"
+			(uuid "dc8027b9-305b-40df-82c2-f573594ad27b")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "D12")
 					(unit 1)
 				)
 			)
@@ -10374,6 +12250,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_01x02_Socket")
+		(at 119.38 105.41 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7d0594fb-8858-4472-83c1-25f60f2553f2")
+		(property "Reference" "J13"
+			(at 120.65 103.5049 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CTRL"
+			(at 120.65 106.0449 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_EH_B2B-EH-A_1x02_P2.50mm_Vertical"
+			(at 119.38 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 119.38 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 119.38 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "9276ceaf-e158-4985-b25a-8f10429075ab")
+		)
+		(pin "1"
+			(uuid "567173f9-7a7e-4069-8c6c-99ac2952dd53")
+		)
+		(instances
+			(project ""
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "J13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 49.53 100.33 0)
 		(unit 1)
@@ -10574,6 +12520,148 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED")
+		(at 172.72 111.76 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8ffd4f9a-206f-46ea-a3b1-b4adc67eb4bc")
+		(property "Reference" "D11"
+			(at 174.244 112.776 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "BL"
+			(at 174.244 114.554 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D3.0mm"
+			(at 172.72 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 172.72 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 172.72 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 172.72 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d8d289a4-c782-4af2-8336-cbf55f08f382")
+		)
+		(pin "1"
+			(uuid "dfe43dcd-58f1-4bdb-845a-01c6f33a9c7c")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "D11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 137.16 177.8 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "93219ece-5897-49b9-bb70-fe9bc73bec32")
+		(property "Reference" "H3"
+			(at 139.7 176.5299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 139.7 179.0699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 137.16 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 137.16 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 137.16 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 154.94 24.13 0)
 		(unit 1)
@@ -10707,7 +12795,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x04_Pin")
-		(at 229.87 118.11 0)
+		(at 227.33 118.11 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10716,7 +12804,7 @@
 		(dnp no)
 		(uuid "98633ae1-f395-4edc-8c60-61e16ad0d7fb")
 		(property "Reference" "J8"
-			(at 229.235 110.49 0)
+			(at 226.695 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10724,7 +12812,7 @@
 			)
 		)
 		(property "Value" "Conn_01x04_Pin"
-			(at 229.235 113.03 0)
+			(at 226.695 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10732,7 +12820,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
-			(at 229.87 118.11 0)
+			(at 227.33 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10741,7 +12829,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 229.87 118.11 0)
+			(at 227.33 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10750,7 +12838,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated"
-			(at 229.87 118.11 0)
+			(at 227.33 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10771,7 +12859,7 @@
 			(uuid "0ff20e5e-f2d0-4c9b-9aca-19b04a8e1df8")
 		)
 		(instances
-			(project ""
+			(project "ThorDrive_HW"
 				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
 					(reference "J8")
 					(unit 1)
@@ -10847,7 +12935,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 20.32 185.42 0)
+		(at 20.32 171.45 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10856,7 +12944,7 @@
 		(fields_autoplaced yes)
 		(uuid "9ac1b968-a6ac-4004-a709-13c1cf2841af")
 		(property "Reference" "#PWR018"
-			(at 20.32 189.23 0)
+			(at 20.32 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10865,7 +12953,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 20.32 180.34 0)
+			(at 20.32 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10873,7 +12961,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 20.32 185.42 0)
+			(at 20.32 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10882,7 +12970,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 20.32 185.42 0)
+			(at 20.32 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10891,7 +12979,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 20.32 185.42 0)
+			(at 20.32 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10929,7 +13017,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Push"
+		(property "Value" "RESET"
 			(at 107.95 62.23 0)
 			(effects
 				(font
@@ -10974,6 +13062,70 @@
 			(project ""
 				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
 					(reference "SW1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 137.16 160.02 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9f3d1d94-282f-4366-827b-fee6803decd0")
+		(property "Reference" "H1"
+			(at 139.7 158.7499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 139.7 161.2899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 137.16 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 137.16 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 137.16 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project ""
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "H1")
 					(unit 1)
 				)
 			)
@@ -11400,35 +13552,34 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x04_Socket")
-		(at 223.52 26.67 0)
+		(lib_id "Device:LED")
+		(at 165.1 111.76 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ada63d6e-cafb-497a-99a2-d23418fd76cf")
-		(property "Reference" "J1"
-			(at 224.79 26.6699 0)
+		(uuid "aaa8e3cf-fb6d-45be-9236-8c32b41d1c3d")
+		(property "Reference" "D10"
+			(at 168.91 112.0774 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Value" "Conn_01x04_Socket"
-			(at 224.79 29.2099 0)
+		(property "Value" "AL"
+			(at 166.624 114.554 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_EH_B4B-EH-A_1x04_P2.50mm_Vertical"
-			(at 223.52 26.67 0)
+		(property "Footprint" "LED_THT:LED_D3.0mm"
+			(at 165.1 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11437,7 +13588,86 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 223.52 26.67 0)
+			(at 165.1 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 165.1 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 165.1 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "402b8b71-783d-44a6-86d4-54378b6e54ca")
+		)
+		(pin "1"
+			(uuid "c6525758-43c8-4291-8366-9362792a4c1b")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "D10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x04_Socket")
+		(at 223.52 29.21 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ada63d6e-cafb-497a-99a2-d23418fd76cf")
+		(property "Reference" "J1"
+			(at 224.79 29.2101 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x04_Socket"
+			(at 224.79 26.6701 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_EH_B4B-EH-A_1x04_P2.50mm_Vertical"
+			(at 223.52 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 223.52 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11446,7 +13676,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated"
-			(at 223.52 26.67 0)
+			(at 223.52 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11467,7 +13697,7 @@
 			(uuid "17d3bb09-397c-4eac-bff8-0af09644862e")
 		)
 		(instances
-			(project ""
+			(project "ThorDrive_HW"
 				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
 					(reference "J1")
 					(unit 1)
@@ -11547,6 +13777,76 @@
 	)
 	(symbol
 		(lib_id "Device:R")
+		(at 172.72 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b3055ed8-97aa-4623-b568-3dc80f8e506b")
+		(property "Reference" "R20"
+			(at 175.26 120.6499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 175.26 123.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 170.942 121.92 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 172.72 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 172.72 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ab698282-0c01-498f-851a-cc991790a758")
+		)
+		(pin "1"
+			(uuid "6e69d651-a1dd-4afc-9b90-2086da06156f")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "R20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
 		(at 161.29 80.01 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11610,6 +13910,72 @@
 			(project "ThorDrive_HW"
 				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
 					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 161.29 99.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c0351ca5-6a01-4e67-8ff9-3974d33ccb39")
+		(property "Reference" "#PWR035"
+			(at 161.29 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 161.29 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 161.29 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 161.29 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 161.29 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "be11c1bb-f61b-4098-852b-ba9070b28225")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -11810,7 +14176,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED"
+		(property "Value" "UV"
 			(at 162.814 75.184 90)
 			(effects
 				(font
@@ -11819,7 +14185,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
+		(property "Footprint" "LED_THT:LED_D3.0mm"
 			(at 161.29 72.39 0)
 			(effects
 				(font
@@ -11878,10 +14244,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "c5abc8e9-9952-496d-9e32-32bbefe0b124")
 		(property "Reference" "D2"
-			(at 151.13 34.6074 90)
+			(at 148.844 34.798 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11889,8 +14254,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED"
-			(at 151.13 37.1474 90)
+		(property "Value" "HALL_A"
+			(at 140.208 30.988 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11898,7 +14263,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
+		(property "Footprint" "LED_THT:LED_D3.0mm"
 			(at 147.32 34.29 0)
 			(effects
 				(font
@@ -12093,6 +14458,154 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 142.24 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cc2f5bae-2135-4f48-8e9f-2c367fc3780f")
+		(property "Reference" "R16"
+			(at 144.78 120.6499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 144.78 123.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 140.462 121.92 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 142.24 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 142.24 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "507b9cac-a969-46ce-bd01-c7ee90142175")
+		)
+		(pin "1"
+			(uuid "80a4ec80-184d-464c-ba25-ea5d0151caf5")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 142.24 111.76 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cffc260c-9f6a-455c-b900-188ae40a3174")
+		(property "Reference" "D7"
+			(at 146.05 112.0774 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "AH"
+			(at 143.256 114.3 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D3.0mm"
+			(at 142.24 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 142.24 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 142.24 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 142.24 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "0cea81b5-8415-4e47-8707-da0194624874")
+		)
+		(pin "1"
+			(uuid "dbd70e03-92a4-4482-975a-c6c569d76f27")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "D7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "MCU_Microchip_ATmega:ATmega328P-P")
 		(at 49.53 59.69 0)
 		(unit 1)
@@ -12241,16 +14754,16 @@
 	)
 	(symbol
 		(lib_id "Device:R_Potentiometer")
-		(at 64.77 177.8 180)
+		(at 64.77 177.8 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "d50b657f-793b-4d15-b344-51f7df730413")
 		(property "Reference" "RV2"
-			(at 67.31 176.5299 0)
+			(at 67.31 179.0701 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12259,7 +14772,7 @@
 			)
 		)
 		(property "Value" "R_Potentiometer"
-			(at 67.31 179.0699 0)
+			(at 67.31 176.5301 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12397,7 +14910,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED"
+		(property "Value" "PWR"
 			(at 280.67 42.2274 90)
 			(effects
 				(font
@@ -12406,7 +14919,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
+		(property "Footprint" "LED_THT:LED_D3.0mm"
 			(at 276.86 39.37 0)
 			(effects
 				(font
@@ -12663,6 +15176,70 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 137.16 186.69 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ef49ea27-2bdb-49fc-9708-02a441c48773")
+		(property "Reference" "H4"
+			(at 139.7 185.4199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 139.7 187.9599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 137.16 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 137.16 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 137.16 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "74xx:7400")
 		(at 261.62 44.45 0)
 		(unit 5)
@@ -12764,6 +15341,76 @@
 				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
 					(reference "U4")
 					(unit 5)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 165.1 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f5b6e6ce-ec57-46f7-a26c-3a3260cdd0da")
+		(property "Reference" "R19"
+			(at 167.64 120.6499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 167.64 123.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 163.322 121.92 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 165.1 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 165.1 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "bde097e1-3531-4e16-8469-8ba27f0ef03e")
+		)
+		(pin "1"
+			(uuid "7b10a811-8052-40f1-abae-e967515e6505")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "R19")
+					(unit 1)
 				)
 			)
 		)
@@ -12964,6 +15611,74 @@
 			(project "ThorDrive_HW"
 				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
 					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 106.68 92.71 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ff69267b-b827-48c8-9f43-44e846ef5824")
+		(property "Reference" "R23"
+			(at 106.68 86.36 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 106.68 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 106.68 94.488 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 106.68 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 106.68 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e366ea0f-b916-40cf-a659-d9b96842e117")
+		)
+		(pin "2"
+			(uuid "85385116-0789-45e5-8dda-b59d55bf4107")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085"
+					(reference "R23")
 					(unit 1)
 				)
 			)
