@@ -1045,6 +1045,16 @@
 	)
 	(wire
 		(pts
+			(xy 44.45 24.13) (xy 49.53 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28f5129f-f29a-46bc-9c90-0f734684f19f")
+	)
+	(wire
+		(pts
 			(xy 46.99 69.85) (xy 46.99 74.93)
 		)
 		(stroke
@@ -1375,6 +1385,16 @@
 	)
 	(wire
 		(pts
+			(xy 44.45 45.72) (xy 49.53 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a27f535a-677b-4e8b-8684-02f33430a7fe")
+	)
+	(wire
+		(pts
 			(xy 46.99 55.88) (xy 67.31 55.88)
 		)
 		(stroke
@@ -1545,16 +1565,6 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 45.72) (xy 49.53 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d6501961-2d03-4669-9269-220bc7c041ac")
-	)
-	(wire
-		(pts
 			(xy 50.8 119.38) (xy 49.53 119.38)
 		)
 		(stroke
@@ -1562,16 +1572,6 @@
 			(type default)
 		)
 		(uuid "df257a26-3e85-4623-af78-23e02a29e35f")
-	)
-	(wire
-		(pts
-			(xy 46.99 24.13) (xy 49.53 24.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e3b5e6ed-e8de-48f5-8f27-39825f133ef2")
 	)
 	(wire
 		(pts
@@ -1692,28 +1692,6 @@
 			(type default)
 		)
 		(uuid "fba97544-dc87-4795-89ec-9eae87972c4d")
-	)
-	(global_label "PhaseB voltage"
-		(shape input)
-		(at 45.72 45.72 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "08e499f6-80bd-44b1-bb90-051ed2cee569")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 27.9184 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
 	)
 	(global_label "BG_voltageBuff"
 		(shape input)
@@ -1891,6 +1869,28 @@
 			)
 		)
 	)
+	(global_label "PhaseA voltage"
+		(shape input)
+		(at 44.45 24.13 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5c011c32-5132-406c-9180-53c4595ca936")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 26.8298 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "CG_voltageBuff"
 		(shape input)
 		(at 72.39 67.31 0)
@@ -1957,6 +1957,28 @@
 			)
 		)
 	)
+	(global_label "PhaseB voltage"
+		(shape input)
+		(at 44.45 45.72 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "80aa862a-678d-4708-9498-75adb52b546f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 26.6484 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "VN"
 		(shape input)
 		(at 62.23 137.16 0)
@@ -2019,28 +2041,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "PhaseA voltage"
-		(shape input)
-		(at 46.99 24.13 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "9efa90bc-0282-4b17-8a40-f48a35aa69bd")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 29.3698 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -2158,13 +2158,13 @@
 	(symbol
 		(lib_id "Amplifier_Operational:LM324")
 		(at 58.42 88.9 0)
-		(unit 4)
+		(unit 3)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "17c158ae-afdc-4b65-bf10-fb903c0bed6f")
+		(uuid "1ba3945c-b376-4b74-b4b1-b1671c5ce406")
 		(property "Reference" "U3"
 			(at 58.42 78.74 0)
 			(effects
@@ -2209,52 +2209,52 @@
 			)
 		)
 		(pin "9"
-			(uuid "6ef1b130-bf07-4b04-94d9-42f2fb74c9ff")
+			(uuid "7f2fdda7-3f5e-438b-a47c-9b581b187708")
 		)
 		(pin "5"
-			(uuid "97d845c4-598c-4f91-9aef-b7fb6367005f")
+			(uuid "97d845c4-598c-4f91-9aef-b7fb63670060")
 		)
 		(pin "13"
-			(uuid "103502a4-4410-4c6b-951b-9f20dadaf824")
+			(uuid "28ab295a-3864-4e7f-bb78-213c00a3791b")
 		)
 		(pin "6"
-			(uuid "c3cd8bc3-dbb1-45d6-9ce1-0fe8729a17b7")
+			(uuid "c3cd8bc3-dbb1-45d6-9ce1-0fe8729a17b8")
 		)
 		(pin "4"
-			(uuid "e66b7a97-c00c-483a-bc01-0a1187a8c1c8")
+			(uuid "e66b7a97-c00c-483a-bc01-0a1187a8c1c9")
 		)
 		(pin "7"
-			(uuid "dadeea18-c24a-4d66-ad97-42c92a606eb2")
+			(uuid "dadeea18-c24a-4d66-ad97-42c92a606eb3")
 		)
 		(pin "12"
-			(uuid "1e3d05ac-ac58-4def-a999-48aaecd4358e")
+			(uuid "1ce5758a-a3dc-4f27-8ccc-3e80bf8628a1")
 		)
 		(pin "1"
-			(uuid "b02eafc7-c9a1-4174-9852-5c8e50de90c0")
+			(uuid "b02eafc7-c9a1-4174-9852-5c8e50de90c1")
 		)
 		(pin "2"
-			(uuid "d151a4d3-8966-4255-9824-efef95ad4115")
+			(uuid "d151a4d3-8966-4255-9824-efef95ad4116")
 		)
 		(pin "10"
-			(uuid "8aa09675-f757-4218-b36d-60331c54ba4d")
+			(uuid "e774c04b-614c-482a-a0e7-66057c128d7b")
 		)
 		(pin "14"
-			(uuid "57fe06c9-9e90-490b-a293-4d2884b65ee9")
+			(uuid "10cd6678-c958-4dd9-91e2-195e79005e43")
 		)
 		(pin "3"
-			(uuid "642a9198-adc0-47e3-bcae-5f3a667ccb85")
+			(uuid "642a9198-adc0-47e3-bcae-5f3a667ccb86")
 		)
 		(pin "11"
-			(uuid "d2d720b5-e825-47a4-a6fd-f1695be274fa")
+			(uuid "d2d720b5-e825-47a4-a6fd-f1695be274fb")
 		)
 		(pin "8"
-			(uuid "d0dedd54-1f96-4aa8-97c9-64915d01ec58")
+			(uuid "0b31dd1c-6d63-4fe0-b4ca-fe2d131e4698")
 		)
 		(instances
 			(project "ThorDrive_HW"
 				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085/ec7c2513-9ba7-4c4a-bbc6-f78f33bc25e1"
 					(reference "U3")
-					(unit 4)
+					(unit 3)
 				)
 			)
 		)
@@ -2457,109 +2457,6 @@
 				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085/ec7c2513-9ba7-4c4a-bbc6-f78f33bc25e1"
 					(reference "R3")
 					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Amplifier_Operational:LM324")
-		(at 176.53 82.55 0)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "35f9c22b-122b-4cb0-bc2b-23c8413914e4")
-		(property "Reference" "U2"
-			(at 176.53 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LM324"
-			(at 176.53 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
-			(at 175.26 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
-			(at 177.8 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
-			(at 176.53 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "116287e5-5ca3-4bfa-a82b-65b8c8f4f3ad")
-		)
-		(pin "12"
-			(uuid "25702378-94ae-4da1-b4ce-9b5fb41e5ecb")
-		)
-		(pin "8"
-			(uuid "39fda47a-dc2a-4dfa-b0b9-ccacfe2025ba")
-		)
-		(pin "1"
-			(uuid "1427a511-662e-41cc-b8f0-0f86bad4a110")
-		)
-		(pin "14"
-			(uuid "4353d263-6a9f-4785-af2a-20e88be480f1")
-		)
-		(pin "3"
-			(uuid "1bfbeb33-3025-4254-b993-2a467d678dde")
-		)
-		(pin "4"
-			(uuid "1da751c6-e845-400e-8f4b-204e10a50c07")
-		)
-		(pin "9"
-			(uuid "39db0446-03b2-4388-b586-5dd55a34c04f")
-		)
-		(pin "10"
-			(uuid "3452e6c2-bbed-4a4e-b01a-eeba8bd4dd70")
-		)
-		(pin "5"
-			(uuid "d10aeaa9-9614-42a5-aafb-b5c22fba10f5")
-		)
-		(pin "7"
-			(uuid "fc0c3516-c9f3-405e-9041-ab9cc03a9fc4")
-		)
-		(pin "6"
-			(uuid "292ed82b-46cf-4011-b33b-ade5748f166f")
-		)
-		(pin "13"
-			(uuid "5675f98f-89d8-4ed0-bec1-96d413b13278")
-		)
-		(pin "11"
-			(uuid "7c4acb95-d098-4db0-a2e4-1826a5501c01")
-		)
-		(instances
-			(project "ThorDrive_HW"
-				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085/ec7c2513-9ba7-4c4a-bbc6-f78f33bc25e1"
-					(reference "U2")
-					(unit 2)
 				)
 			)
 		)
@@ -3178,6 +3075,110 @@
 				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085/ec7c2513-9ba7-4c4a-bbc6-f78f33bc25e1"
 					(reference "#PWR05")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:LM324")
+		(at 58.42 67.31 0)
+		(unit 4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9507fd1b-2ebb-47cd-bb35-f114d978d9be")
+		(property "Reference" "U3"
+			(at 58.42 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LM324"
+			(at 58.42 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
+			(at 57.15 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
+			(at 59.69 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
+			(at 58.42 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "9"
+			(uuid "6ef1b130-bf07-4b04-94d9-42f2fb74c9ff")
+		)
+		(pin "5"
+			(uuid "97d845c4-598c-4f91-9aef-b7fb6367005f")
+		)
+		(pin "13"
+			(uuid "9cc5b6a4-2712-4d41-a1df-2515b59039e6")
+		)
+		(pin "6"
+			(uuid "c3cd8bc3-dbb1-45d6-9ce1-0fe8729a17b7")
+		)
+		(pin "4"
+			(uuid "e66b7a97-c00c-483a-bc01-0a1187a8c1c8")
+		)
+		(pin "7"
+			(uuid "dadeea18-c24a-4d66-ad97-42c92a606eb2")
+		)
+		(pin "12"
+			(uuid "f4780a06-adcb-4c71-adc6-3b5eb9857ed4")
+		)
+		(pin "1"
+			(uuid "b02eafc7-c9a1-4174-9852-5c8e50de90c0")
+		)
+		(pin "2"
+			(uuid "d151a4d3-8966-4255-9824-efef95ad4115")
+		)
+		(pin "10"
+			(uuid "8aa09675-f757-4218-b36d-60331c54ba4d")
+		)
+		(pin "14"
+			(uuid "14dd2d56-04db-40a3-bbc5-7afadc80899d")
+		)
+		(pin "3"
+			(uuid "642a9198-adc0-47e3-bcae-5f3a667ccb85")
+		)
+		(pin "11"
+			(uuid "d2d720b5-e825-47a4-a6fd-f1695be274fa")
+		)
+		(pin "8"
+			(uuid "d0dedd54-1f96-4aa8-97c9-64915d01ec58")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085/ec7c2513-9ba7-4c4a-bbc6-f78f33bc25e1"
+					(reference "U3")
+					(unit 4)
 				)
 			)
 		)
@@ -3808,6 +3809,109 @@
 		)
 	)
 	(symbol
+		(lib_id "Amplifier_Operational:LM324")
+		(at 177.8 38.1 0)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d1fec499-76f9-4d09-9c03-a5986115ec96")
+		(property "Reference" "U2"
+			(at 177.8 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LM324"
+			(at 177.8 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
+			(at 176.53 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
+			(at 179.07 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
+			(at 177.8 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "116287e5-5ca3-4bfa-a82b-65b8c8f4f3ad")
+		)
+		(pin "12"
+			(uuid "25702378-94ae-4da1-b4ce-9b5fb41e5ecb")
+		)
+		(pin "8"
+			(uuid "39fda47a-dc2a-4dfa-b0b9-ccacfe2025ba")
+		)
+		(pin "1"
+			(uuid "1427a511-662e-41cc-b8f0-0f86bad4a110")
+		)
+		(pin "14"
+			(uuid "4353d263-6a9f-4785-af2a-20e88be480f1")
+		)
+		(pin "3"
+			(uuid "1bfbeb33-3025-4254-b993-2a467d678dde")
+		)
+		(pin "4"
+			(uuid "1da751c6-e845-400e-8f4b-204e10a50c07")
+		)
+		(pin "9"
+			(uuid "39db0446-03b2-4388-b586-5dd55a34c04f")
+		)
+		(pin "10"
+			(uuid "3452e6c2-bbed-4a4e-b01a-eeba8bd4dd70")
+		)
+		(pin "5"
+			(uuid "1e3c3c2a-c875-4537-ba92-8f6b9ab1ade5")
+		)
+		(pin "7"
+			(uuid "5779e3ec-e3dc-4a70-a7fe-3f10621d83af")
+		)
+		(pin "6"
+			(uuid "bdebc1cb-1618-4425-8019-3366caa6eb8f")
+		)
+		(pin "13"
+			(uuid "5675f98f-89d8-4ed0-bec1-96d413b13278")
+		)
+		(pin "11"
+			(uuid "7c4acb95-d098-4db0-a2e4-1826a5501c01")
+		)
+		(instances
+			(project "ThorDrive_HW"
+				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085/ec7c2513-9ba7-4c4a-bbc6-f78f33bc25e1"
+					(reference "U2")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 252.73 54.61 0)
 		(unit 1)
@@ -4008,110 +4112,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Operational:LM324")
-		(at 58.42 67.31 0)
-		(unit 3)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e92d7d6c-25ab-4eda-941c-0dd0fd6c5abc")
-		(property "Reference" "U3"
-			(at 58.42 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LM324"
-			(at 58.42 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
-			(at 57.15 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
-			(at 59.69 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
-			(at 58.42 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "9"
-			(uuid "dec918e2-8dbc-4e87-8384-c90551ec6578")
-		)
-		(pin "5"
-			(uuid "97d845c4-598c-4f91-9aef-b7fb63670060")
-		)
-		(pin "13"
-			(uuid "28ab295a-3864-4e7f-bb78-213c00a3791b")
-		)
-		(pin "6"
-			(uuid "c3cd8bc3-dbb1-45d6-9ce1-0fe8729a17b8")
-		)
-		(pin "4"
-			(uuid "e66b7a97-c00c-483a-bc01-0a1187a8c1c9")
-		)
-		(pin "7"
-			(uuid "dadeea18-c24a-4d66-ad97-42c92a606eb3")
-		)
-		(pin "12"
-			(uuid "1ce5758a-a3dc-4f27-8ccc-3e80bf8628a1")
-		)
-		(pin "1"
-			(uuid "b02eafc7-c9a1-4174-9852-5c8e50de90c1")
-		)
-		(pin "2"
-			(uuid "d151a4d3-8966-4255-9824-efef95ad4116")
-		)
-		(pin "10"
-			(uuid "c611724a-c21d-4909-80e7-9d75553cfd50")
-		)
-		(pin "14"
-			(uuid "10cd6678-c958-4dd9-91e2-195e79005e43")
-		)
-		(pin "3"
-			(uuid "642a9198-adc0-47e3-bcae-5f3a667ccb86")
-		)
-		(pin "11"
-			(uuid "d2d720b5-e825-47a4-a6fd-f1695be274fb")
-		)
-		(pin "8"
-			(uuid "0acb7949-b655-43c5-bb5c-6352ea6bae4b")
-		)
-		(instances
-			(project "ThorDrive_HW"
-				(path "/efe4bd8d-e237-4ce7-aa07-72c9ab016085/ec7c2513-9ba7-4c4a-bbc6-f78f33bc25e1"
-					(reference "U3")
-					(unit 3)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 264.16 85.09 0)
 		(unit 1)
@@ -4247,15 +4247,15 @@
 	)
 	(symbol
 		(lib_id "Amplifier_Operational:LM324")
-		(at 177.8 38.1 0)
+		(at 176.53 82.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f548b34f-56ce-4393-827b-60e4a21f3279")
+		(uuid "fabbd859-ee8c-4710-87fb-387e00a9453e")
 		(property "Reference" "U2"
-			(at 177.8 27.94 0)
+			(at 176.53 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4263,7 +4263,7 @@
 			)
 		)
 		(property "Value" "LM324"
-			(at 177.8 30.48 0)
+			(at 176.53 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4271,7 +4271,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
-			(at 176.53 35.56 0)
+			(at 175.26 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4280,7 +4280,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
-			(at 179.07 33.02 0)
+			(at 177.8 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4289,7 +4289,7 @@
 			)
 		)
 		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
-			(at 177.8 38.1 0)
+			(at 176.53 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4298,7 +4298,7 @@
 			)
 		)
 		(pin "2"
-			(uuid "d84ae946-d081-44ef-84fd-b65c36db2a0b")
+			(uuid "096324e8-1fc2-4cab-8ef9-5a744fed2560")
 		)
 		(pin "12"
 			(uuid "25702378-94ae-4da1-b4ce-9b5fb41e5ecc")
@@ -4307,13 +4307,13 @@
 			(uuid "39fda47a-dc2a-4dfa-b0b9-ccacfe2025bb")
 		)
 		(pin "1"
-			(uuid "1691e327-a201-4bd7-8fc8-7eede197dc11")
+			(uuid "efcb8ba0-336d-40c2-82bd-233d2f336e9d")
 		)
 		(pin "14"
 			(uuid "4353d263-6a9f-4785-af2a-20e88be480f2")
 		)
 		(pin "3"
-			(uuid "d44cbead-05a7-49b9-9315-6cd57614df53")
+			(uuid "7a9dc7e1-19f1-4550-ae93-b4acd9038943")
 		)
 		(pin "4"
 			(uuid "1da751c6-e845-400e-8f4b-204e10a50c08")
