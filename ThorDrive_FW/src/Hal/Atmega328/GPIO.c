@@ -17,7 +17,7 @@
  {
     if(direction == OUTPUT)
     {
-        SBI(*_GET_DDR(pin), _GET_BIT(pin));
+        SBI(*_GET_DDR(pin), _GET_BIT(pin));SCNd16
     }
     else if(direction == INPUT)
     {
@@ -28,7 +28,7 @@
     {
         CBI(*_GET_DDR(pin), _GET_BIT(pin)); // Set pin as input
         SBI(*_GET_PORT(pin), _GET_BIT(pin)); // Enable pull-up resistor
-    }
+    }s
  }
  
  void GPIO_t::gpio_Pin_write(uint8_t pin, uint8_t value)
