@@ -1,0 +1,35 @@
+<library>
+  <repositories>
+    <repository><path>../../../ext/modm/repo.lb</path></repository>
+  </repositories>
+
+  <options>
+    <option name="modm:build:build.path">../build</option>
+    <option name="modm:build:project.name">PROTO_V0.1Atmega328</option>
+    <option name="modm:target">atmega328p-au</option>
+    <option name="modm:platform:core:f_cpu">16M</option>
+  </options>
+
+  <modules>
+    <module>modm:build:scons</module>
+
+    <module>modm:platform:core</module>
+    <module>modm:platform:gpio</module>
+    <module>modm:platform:uart:0</module>
+    <module>modm:platform:adc</module>
+    <module>modm:platform:clock</module>
+
+    <module>modm:architecture:interrupt</module>
+    <module>modm:architecture:delay</module>
+
+
+    <module>modm:processing:timer</module>
+
+    <module>modm:ui:button</module>
+
+    <module>modm:driver:adc_sampler</module>
+    <module>modm:io</module>
+    
+  </modules>
+
+</library>

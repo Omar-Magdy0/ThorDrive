@@ -1,0 +1,9 @@
+/**
+
+@defgroup modm_architecture Architecture Interfaces
+
+lbuild module: `modm:architecture`
+
+All hardware peripherals with common interfaces.
+
+ */

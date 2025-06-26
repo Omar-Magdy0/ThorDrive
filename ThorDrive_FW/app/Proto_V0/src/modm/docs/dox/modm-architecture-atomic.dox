@@ -1,0 +1,10 @@
+/**
+
+@ingroup modm_architecture
+@defgroup modm_architecture_atomic Atomic Operations and Containers
+
+lbuild module: `modm:architecture:atomic`
+
+
+
+ */

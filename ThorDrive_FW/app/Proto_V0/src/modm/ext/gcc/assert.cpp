@@ -1,0 +1,79 @@
+/*
+ * Copyright (c) 2018, Christopher Durand
+ *
+ * This file is part of the modm project.
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+// ----------------------------------------------------------------------------
+
+#include <cstdint>
+#include <bits/functexcept.h>
+#include <modm/math/utils/bit_constants.hpp>
+
+#include <modm/architecture/interface/assert.hpp>
+
+#define __modm_stdcpp_failure(failure) modm_assert(false, "c++." failure, "C++ Exception 'std::" failure "' was raised!");
+namespace std _GLIBCXX_VISIBILITY(default)
+{
+_GLIBCXX_BEGIN_NAMESPACE_VERSION
+
+	void
+	__throw_logic_error(const char* __s __attribute__((unused)))
+	{ __modm_stdcpp_failure("logic_error"); }
+
+	void
+	__throw_domain_error(const char* __s __attribute__((unused)))
+	{ __modm_stdcpp_failure("domain_error"); }
+
+	void
+	__throw_invalid_argument(const char* __s __attribute__((unused)))
+	{ __modm_stdcpp_failure("invalid_argument"); }
+
+	void
+	__throw_length_error(const char* __s __attribute__((unused)))
+	{ __modm_stdcpp_failure("length_error"); }
+
+	void
+	__throw_out_of_range(const char* __s __attribute__((unused)))
+	{ __modm_stdcpp_failure("out_of_range"); }
+
+	void
+	__throw_runtime_error(const char* __s __attribute__((unused)))
+	{ __modm_stdcpp_failure("runtime_error"); }
+
+	void
+	__throw_range_error(const char* __s __attribute__((unused)))
+	{ __modm_stdcpp_failure("range_error"); }
+
+	void
+	__throw_overflow_error(const char* __s __attribute__((unused)))
+	{ __modm_stdcpp_failure("overflow_error"); }
+
+	void
+	__throw_underflow_error(const char* __s __attribute__((unused)))
+	{ __modm_stdcpp_failure("underflow_error"); }
+
+	void
+	__throw_bad_optional_access()
+	{ __modm_stdcpp_failure("bad_optional"); }
+
+	void
+	__throw_bad_variant_access(const char* __s __attribute__((unused)))
+	{ __modm_stdcpp_failure("bad_variant"); }
+
+	void
+	__throw_bad_function_call()
+	{ __modm_stdcpp_failure("bad_function_call"); }
+
+	void
+	__throw_bad_any_cast()
+	{ __modm_stdcpp_failure("bad_any_cast"); }
+
+	void
+	__throw_system_error(int errc __attribute__((unused)))
+	{ __modm_stdcpp_failure("system_error"); }
+_GLIBCXX_END_NAMESPACE_VERSION
+} // namespace

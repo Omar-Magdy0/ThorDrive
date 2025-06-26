@@ -1,0 +1,61 @@
+/*
+ * Copyright (c) 2020, Niklas Hauser
+ *
+ * This file is part of the modm project.
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+// ----------------------------------------------------------------------------
+
+#pragma once
+
+/// @cond
+#include <util/delay.h>
+#include <modm/architecture/utils.hpp>
+
+#define MODM_DELAY_NS_IS_ACCURATE 0
+
+namespace modm
+{
+
+modm_always_inline void
+delay_ns(uint32_t ns)
+{
+	__builtin_constant_p(ns) ? ({
+		// ns is a constant value, we can let the compiler do the work
+		const uint32_t cycles = uint32_t(ceil(fabs((F_CPU * double(ns)) / 1e9)));
+		__builtin_avr_delay_cycles(cycles);
+	}) : ({
+		const uint16_t loops = ns >> 8;
+		if (loops) _delay_loop_2(loops);
+	});
+}
+modm_always_inline void
+delay_us(uint32_t us)
+{
+	__builtin_constant_p(us) ? ({
+		// ns is a constant value, we can let the compiler do the work
+		const uint32_t cycles = uint32_t(ceil(fabs((F_CPU * double(us)) / 1e6)));
+		__builtin_avr_delay_cycles(cycles);
+	}) : ({
+		constexpr int32_t cycles = (F_CPU / 1e6) - 6;
+		for (uint32_t _us = us; _us; _us--)
+			__builtin_avr_delay_cycles(cycles);
+	});
+}
+modm_always_inline void
+delay_ms(uint32_t ms)
+{
+	__builtin_constant_p(ms) ? ({
+		// ns is a constant value, we can let the compiler do the work
+		const uint32_t cycles = uint32_t(ceil(fabs((F_CPU * double(ms)) / 1e3)));
+		__builtin_avr_delay_cycles(cycles);
+	}) : ({
+		while(ms--) __builtin_avr_delay_cycles((F_CPU / 1e3) - 10);
+	});
+}
+
+}   // namespace modm
+/// @endcond

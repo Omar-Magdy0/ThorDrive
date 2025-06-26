@@ -1,0 +1,10 @@
+/**
+
+@ingroup modm_platform
+@defgroup modm_platform_uart Universal Asynchronous Receiver Transmitter (UART)
+
+lbuild module: `modm:platform:uart`
+
+
+
+ */

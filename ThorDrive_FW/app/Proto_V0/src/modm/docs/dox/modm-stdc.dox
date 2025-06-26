@@ -1,0 +1,17 @@
+/**
+
+@defgroup modm_stdc C Standard Environment
+
+lbuild module: `modm:stdc`
+
+Refines the C language to make it easier to use on embedded targets.
+
+
+## ARM Cortex-M
+
+Additional compiler options:
+
+- `--specs=nano.specs`: use Newlib Nano (when not using exceptions).
+- `--specs=nosys.specs`: No additional C library features are implemented.
+
+ */

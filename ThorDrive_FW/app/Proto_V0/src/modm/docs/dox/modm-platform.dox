@@ -1,0 +1,9 @@
+/**
+
+@defgroup modm_platform Platform HAL
+
+lbuild module: `modm:platform`
+
+Target-specific implementation of the Hardware Abstraction Layer.
+
+ */

@@ -1,0 +1,137 @@
+/*
+ * Copyright (c) 2009-2012, 2017, Fabian Greif
+ * Copyright (c) 2011-2018, Niklas Hauser
+ * Copyright (c) 2012, 2017, Sascha Schade
+ *
+ * This file is part of the modm project.
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+// ----------------------------------------------------------------------------
+
+#ifndef MODM_AVR_UART0_HPP
+#define MODM_AVR_UART0_HPP
+
+//#include "../device.hpp"
+#include <modm/architecture/interface/uart.hpp>
+#include <modm/platform/gpio/connector.hpp>
+#include <modm/math/algorithm/prescaler.hpp>
+
+#include <cmath>
+
+namespace modm
+{
+
+namespace platform
+{
+
+/**
+ * (Non-)Buffered Uart0
+ *
+ * This implementation uses a ringbuffer. The size of the ringbuffer
+ * can be changed in the options.
+ *
+ * @author	Fabian Greif
+ * @author	Niklas Hauser
+ * @ingroup	modm_platform_uart modm_platform_uart_0
+ */
+class Uart0 : public ::modm::Uart
+{
+public:
+	// Expose jinja template parameters to be checked by e.g. drivers or application
+	static constexpr size_t RxBufferSize = 8;
+	static constexpr size_t TxBufferSize = 64;
+
+public:
+	template< class... Signals >
+	static void
+	connect(Gpio::InputType InputTypeRx = Gpio::InputType::PullUp)
+	{
+		using Connector = GpioConnector<Peripheral::Usart0, Signals...>;
+		using Tx = typename Connector::template GetSignal< Gpio::Signal::Txd >;
+		using Rx = typename Connector::template GetSignal< Gpio::Signal::Rxd >;
+		static_assert(((Connector::template IsValid<Tx> and Connector::template IsValid<Rx>) and sizeof...(Signals) == 2),
+					  "Uart0::connect() requires one Tx and one Rx signal!");
+
+		// Connector::disconnect();
+		Tx::setOutput();
+		Rx::setInput(InputTypeRx);
+		Connector::connect();
+	}
+
+	template< class SystemClock, baudrate_t baudrate, percent_t tolerance=pct(2) >
+	static inline void
+	initialize()
+	{
+		// use double speed when necessary
+		constexpr uint32_t scalar = (baudrate * 16l > SystemClock::Uart) ? 8 : 16;
+		constexpr auto result = Prescaler::from_linear(
+				SystemClock::Uart / scalar, baudrate, 1, 4095);
+		assertBaudrateInTolerance< result.frequency, baudrate, tolerance >();
+		constexpr uint16_t ubrr = result.index | ((scalar == 8) ? 0x8000 : 0);
+		initialize(ubrr);
+	}
+
+	// MARK: write blocking
+	static void
+	writeBlocking(uint8_t data);
+
+	static void
+	writeBlocking(const uint8_t *data, std::size_t length);
+
+	static void
+	flushWriteBuffer();
+
+	// MARK: write
+	static bool
+	write(uint8_t data);
+
+	static std::size_t
+	write(const uint8_t *data, std::size_t length);
+
+	static bool
+	isWriteFinished();
+
+	// MARK: read
+	static bool
+	read(uint8_t& data);
+
+	static std::size_t
+	read(uint8_t *buffer, std::size_t length);
+
+	// MARK: discard
+	static std::size_t
+	discardReceiveBuffer();
+
+	static std::size_t
+	discardTransmitBuffer();
+
+	// MARK: error
+	/**
+	 * Check whether any errors occurred during receiving.
+	 * Be aware that these indicate an error that occurred somewhere
+	 * since resetting the Error Flags (with `acknowledgeErrorFlags()`), so
+	 * you cannot tell which byte had the error.
+	 *
+	 * @return	`0` if no errors occurred, otherwise a value that
+	 *			corresponds to the Error Flags in register A.
+	 */
+	static uint8_t
+	getErrorFlags();
+
+	/// Clears the error flags.
+	static void
+	acknowledgeErrorFlags();
+
+protected:
+	static void
+	initialize(uint16_t ubrr);
+};
+
+} // namespace platform
+
+} // namespace modm
+
+#endif // MODM_AVR_UART0_HPP

@@ -1,0 +1,199 @@
+# Copyright (c) 2017-2023, Niklas Hauser
+#
+# This file is part of the modm project.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+#!/usr/bin/env python3
+
+from os.path import join, abspath
+Import("env")
+
+profile = ARGUMENTS.get("profile", "release")
+env["CONFIG_PROFILE"] = profile
+env["BUILDPATH"] = join(env["CONFIG_BUILD_BASE"], "scons-" + profile)
+env["BASEPATH"] = abspath("..")
+env["COMPILERPREFIX"] = "avr-"
+# SCons tools
+env.Append(toolpath=[
+    abspath("scons/site_tools"),
+])
+env.Tool("avrdude")
+env.Tool("build_target")
+env.Tool("comstr")
+env.Tool("find_files")
+env.Tool("gcc_retarget")
+env.Tool("qtcreator")
+env.Tool("size")
+env.Tool("template")
+env.Tool("utils")
+env.Tool("utils_buildpath")
+# Toolchain configuration
+env.Append(CPPDEFINES = [
+    "F_CPU=16000000",
+])
+if profile == "debug":
+    env.Append(CPPDEFINES = [
+        "MODM_DEBUG_BUILD",
+    ])
+
+env["CCFLAGS"] = [
+    "--param=min-pagesize=0",
+    "-fdata-sections",
+    "-ffile-prefix-map={gccpath}=.".format(gccpath=env["GCC_PATH"]),
+    "-ffile-prefix-map={project_source_dir}=.".format(project_source_dir=env["BASEPATH"]),
+    "-ffunction-sections",
+    "-finline-limit=10000",
+    "-fshort-wchar",
+    "-funsigned-bitfields",
+    "-funsigned-char",
+    "-fwrapv",
+    "-gdwarf-3",
+    "-W",
+    "-Wall",
+    "-Wduplicated-cond",
+    "-Werror=format",
+    "-Werror=maybe-uninitialized",
+    "-Werror=overflow",
+    "-Werror=return-type",
+    "-Werror=sign-compare",
+    "-Wextra",
+    "-Wlogical-op",
+    "-Wno-redundant-decls",
+    "-Wpointer-arith",
+    "-Wundef",
+]
+if profile == "release":
+    env.Append(CCFLAGS = [
+        "-Os",
+    ])
+if profile == "debug":
+    env.Append(CCFLAGS = [
+        "-fno-move-loop-invariants",
+        "-fno-split-wide-types",
+        "-fno-tree-loop-optimize",
+        "-Og",
+    ])
+
+env["CFLAGS"] = [
+    "-g3",
+    "-std=gnu2x",
+    "-Wbad-function-cast",
+    "-Wimplicit",
+    "-Wredundant-decls",
+    "-Wstrict-prototypes",
+]
+
+env["CXXFLAGS"] = [
+    "-fno-exceptions",
+    "-fno-rtti",
+    "-fno-unwind-tables",
+    "-fno-use-cxa-atexit",
+    "-fstrict-enums",
+    "-g3",
+    "-std=c++23",
+    "-Wno-psabi",
+    "-Wno-volatile",
+    "-Woverloaded-virtual",
+]
+
+env["ASFLAGS"] = [
+    "-gdwarf-3",
+]
+
+env["LINKFLAGS"] = [
+    "-L{project_source_dir}".format(project_source_dir=env["BASEPATH"]),
+    "-Tmodm/link/linkerscript.ld",
+    "-Wl,--fatal-warnings",
+    "-Wl,--gc-sections",
+    "-Wl,--relax",
+    "-Wl,-Map,{target_base}.map,--cref".format(target_base="${TARGET.base}"),
+]
+
+env["ARCHFLAGS"] = [
+    "-mmcu=atmega328p",
+]
+
+
+# ARCHFLAGS must be known for compiling *and* linking
+env.Append(CCFLAGS="$ARCHFLAGS")
+env.Append(ASFLAGS="$ARCHFLAGS")
+env.Append(LINKFLAGS="$ARCHFLAGS")
+
+# Search all linked static libraries multiple times
+env["_LIBFLAGS"] = "-Wl,--start-group " + env["_LIBFLAGS"] + " -Wl,--end-group"
+# We need to link libmodm.a with --whole-archive, so that all weak symbols are
+# visible to the linker. Functions placed in a linker section list are typically
+# not referenced externally, so the linker will discard them when searching.
+# From https://sourceware.org/binutils/docs/ld/Options.html#Options:
+#     For each archive mentioned on the command line after the --whole-archive option, include every object
+#     file in the archive in the link, rather than searching the archive for the required object files.
+env["_LIBFLAGS"] = "-Wl,--whole-archive " + env["_LIBFLAGS"] + " -Wl,--no-whole-archive"
+
+
+
+
+
+
+# Device configuration
+env["CONFIG_DEVICE_NAME"] = "atmega328p-au"
+# Programming configuration
+env["CONFIG_AVRDUDE_DEVICE"] = "m328p"
+# XPCC generator tool path
+env["XPCC_SYSTEM_DESIGN"] = "$BASEPATH/modm/tools/xpcc_generator"
+env.AppendUnique(CPPPATH=[
+    abspath("ext/gcc"),
+    abspath("ext/gcc/libstdc++/include"),
+    abspath("src"),
+])
+
+files = [
+    env.File("ext/gcc/assert.cpp"),
+    env.File("ext/gcc/atomic.cpp"),
+    env.File("ext/gcc/cxxabi.cpp"),
+    env.File("ext/gcc/libstdc++/src/functexcept.cc"),
+    env.File("ext/gcc/libstdc++/src/hash_bytes.cc"),
+    env.File("ext/gcc/libstdc++/src/hashtable_c++0x.cc"),
+    env.File("ext/gcc/libstdc++/src/limits.cc"),
+    env.File("ext/gcc/libstdc++/src/list.cc"),
+    env.File("ext/gcc/libstdc++/src/math.cc"),
+    env.File("ext/gcc/libstdc++/src/new_handler.cc"),
+    env.File("ext/gcc/libstdc++/src/tree.cc"),
+    env.File("ext/gcc/new_delete.cpp"),
+    env.File("src/modm/architecture/driver/atomic/flag.cpp"),
+    env.File("src/modm/io/iostream.cpp"),
+    env.File("src/modm/io/iostream_printf.cpp"),
+    env.File("src/modm/math/utils/avr/sqrt32.sx"),
+    env.File("src/modm/math/utils/bit_operation.cpp"),
+    env.File("src/modm/platform/adc/adc_interrupt.cpp"),
+    env.File("src/modm/platform/clock/clock.cpp"),
+    env.File("src/modm/platform/core/assert.cpp"),
+    env.File("src/modm/platform/uart/uart0_rx.cpp"),
+    env.File("src/modm/platform/uart/uart0_tx.cpp"),
+]
+library = env.StaticLibrary(target="modm", source=files)
+
+env.AppendUnique(LIBS=[
+    library,
+])
+env.AppendUnique(LIBPATH=[
+    abspath(str(library[0].get_dir())),
+])
+for flags in ["CCFLAGS", "CFLAGS", "CXXFLAGS", "ASFLAGS", "ARCHFLAGS", "LINKFLAGS"]:
+	flags_str = ARGUMENTS.get(flags)
+	if flags_str is not None:
+		flags_list = flags_str.split(",")
+		for flag in flags_list:
+			if len(flag) > 1 and flag[0] == "~":
+				try:
+					env[flags].remove(flag[1:])
+				except ValueError:
+					print("'" + flag[1:] + "' does not exist in " + flags +
+						" and therefore can not be removed.")
+					print("Info: " + flags + ": " + ", ".join(env[flags]))
+					exit(1)
+			else:
+				env[flags].append(flag)
+Return("library")

@@ -1,0 +1,48 @@
+/*
+ * Copyright (c) 2015, 2017, Niklas Hauser
+ * Copyright (c) 2017, Fabian Greif
+ *
+ * This file is part of the modm project.
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+// ----------------------------------------------------------------------------
+
+#ifndef MODM_AVR_ADC_INTERRUPT_HPP
+#define MODM_AVR_ADC_INTERRUPT_HPP
+
+#include "adc.hpp"
+#include <modm/architecture/interface/adc_interrupt.hpp>
+
+
+namespace modm
+{
+
+namespace platform
+{
+
+/**
+ * @author		Niklas Hauser
+ *
+ * @ingroup		modm_platform_adc
+ */
+class AdcInterrupt : public modm::platform::Adc, public modm::AdcInterrupt
+{
+public:
+	static inline void
+	attachInterruptHandler(Handler handler)
+	{
+		AdcInterrupt::handler = handler;
+	}
+
+public:
+	static Handler handler;
+};
+
+}	// namespace platform
+
+}	// namespace modm
+
+#endif // MODM_AVR_ADC_INTERRUPT_HPP

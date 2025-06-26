@@ -1,0 +1,22 @@
+/**
+
+@ingroup modm_platform_uart
+@defgroup modm_platform_uart_0 Instance 0
+
+lbuild module: `modm:platform:uart:0`
+
+
+
+## Module Options
+
+### modm:platform:uart:0:buffer.tx: 
+
+
+
+Generated with: `64 in [1 .. 64 .. 254]`
+### modm:platform:uart:0:buffer.rx: 
+
+
+
+Generated with: `8 in [1 .. 8 .. 254]`
+ */

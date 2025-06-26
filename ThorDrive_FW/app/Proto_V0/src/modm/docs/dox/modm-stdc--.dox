@@ -1,0 +1,47 @@
+/**
+
+@defgroup modm_stdc__ C++ Standard Environment
+
+lbuild module: `modm:stdc++`
+
+Refines the C++ language to make it easier to use on embedded targets.
+Depending on the module options, the compiler options are appended with either:
+
+- `-fno-exceptions`: no C++ exceptions.
+- `-fno-rtti`: no C++ run-time type information.
+- `-fno-threadsafe-statics`: no protection of static variable initialization.
+
+or:
+
+- `-fexceptions`: with C++ exceptions.
+- `-frtti`: with C++ run-time type information.
+
+The `std::atomic` interface is implemented for the AVR and Cortex-M devices.
+
+
+## AVR
+
+A partial port of GCC libstdc++ is provided:
+See https://github.com/modm-io/avr-libstdcpp.
+
+## Module Options
+
+### modm:stdc++:assert_on_exception: Assert on exception in stdlib. Set to False to save flash.
+
+
+
+Generated with: `yes in [yes, no]`
+### modm:stdc++:safe_statics: C++ Safe Statics Initialization
+
+Enables safe initialization of statics inside functions and interrupts.
+In case of recursive initialization the debug assertion `stat.rec`
+is raised.
+
+Further reading on this topic:
+
+- [C++ ABI for the ARM Architecture](https://developer.arm.com/documentation/ihi0041/latest)
+- [Adventures in Systems Programming: C++ Local Statics](https://manishearth.github.io/blog/2015/06/26/adventures-in-systems-programming-c-plus-plus-local-statics/)
+- [C++11 thread-safe static object initialization](https://iamroman.org/blog/2017/04/cpp11-static-init/)
+
+Generated with: `yes in [yes, no]`
+ */

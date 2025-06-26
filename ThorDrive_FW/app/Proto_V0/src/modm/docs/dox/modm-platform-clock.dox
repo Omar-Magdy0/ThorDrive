@@ -1,0 +1,19 @@
+/**
+
+@ingroup modm_platform
+@defgroup modm_platform_clock System Clock via Timer/Counter 0
+
+lbuild module: `modm:platform:clock`
+
+The TC0 timer is used to provide a time point at milli- and microsecond
+resolution to implement the `modm::Clock::now()` and `modm::PreciseClock::now()`
+interfaces defined in the <a href="group__modm__architecture__clock.html"><code>modm:architecture:clock</code></a> module.
+
+For this, the timer is configured to trigger a 1ms interrupt to increment the
+millisecond counter. To compute the microsecond counter, the 8-bit timer counter
+is used to interpolate between milliseconds via a 16x16=16-bit multiplication
+and shift to avoid a division. This is very fast, however, the resolution of the
+`modm::PreciseClock` is limited to *at best* ~4us (1000us/8-bit) and *at worst*
+~32us ((2MHz/64)/1000us).
+
+ */

@@ -1,0 +1,648 @@
+/**
+
+@defgroup modm_build Build System Generators
+
+lbuild module: `modm:build`
+
+This parent module defines a common set of functionality that is independent of
+the specific build system generator implementation.
+This includes straight-forward options like project name and build path
+but also more complicated configuration for programming your target via
+AvrDude or OpenOCD and debugging via GDB.
+
+**Note that this module does not compile your project, you will need to choose
+the <a href="group__modm__build__scons.html"><code>modm:build:scons</code></a> or `modm:build:cmake` submodule for that, or provide
+your own build system.**
+
+
+## Compiler Options
+
+We maintain a common set of compiler options for all build system generator, so
+that they all have feature parity. We currently only support compiling modm
+with GCC for AVR, ARM Cortex-M and x86/posix with the options mentioned in the
+[offical GCC options documentation][options].
+
+You can find all compiler options inside the generated build script for your
+project, the options presented here are only the most important ones.
+
+#### Shared for C and C++
+
+- `-W{all, extra}`: a basic set of warnings.
+- `-Werror={format, maybe-uninitialized, overflow, sign-compare}`: these warnings are treated as errors.
+- `-f{data, function}-sections`: puts data and functions into their own linker section.
+- `-funsigned-{char, bitfields}`: modm tries to use `stdint.h` types everywhere, but just in case.
+- `-fwrapv`: integer overflows wrap around according to 2s complement.
+
+For *release builds*:
+
+- `-Os`: optimize for smaller size.
+
+For *debug builds*:
+
+- `-Og`: optimize for debugging experience.
+- `MODM_DEBUG_BUILD`: this macro is only defined in debug profile. You can use
+                      it with `#ifdef MODM_DEBUG_BUILD` to enable debug code.
+
+#### Only C
+
+- `-std=gnu2x`: use C23 with GNU extensions (for `asm volatile`).
+
+#### Only C++
+
+- `-std=c++23`: use C++23
+
+For exception and RTTI flags, see <a href="group__modm__stdc++.html"><code>modm:stdc++</code></a> module.
+
+#### Linker
+
+- `--gc-section`: garbage collecting sections throws out a lot of unused data/code.
+- `-L{linkdir} -Tlinkerscript.ld`: modm uses a custom linkerscript.
+
+For target specific flags, see the <a href="group__modm__platform__core.html"><code>modm:platform:core</code></a> and related modules.
+
+[options]: https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html
+
+
+## Configuration
+
+This module generates a common set of configuration files that are used by the
+common tooling. Please note that these files are the *foundation* of more
+extensive tooling available as Python scripts which are then again wrapped by
+your chosen build system for convenience.
+
+
+### OpenOCD
+
+For accessing your ARM Cortex-M based device, we use OpenOCD by default and
+generate a `modm/openocd.cfg` file with the target specific configuration:
+
+- Search directories passed via the `path.openocd` collector.
+- User configuration files passed via the `openocd.source` collector.
+  Your custom `modm:build:openocd.cfg` is added here too.
+
+You need to start openocd with this configuration file:
+
+~~~{.sh}
+openocd -f modm/openocd.cfg
+~~~
+
+@warning Be careful attaching to a running target
+    The OpenOCD implementation halts the target at least while the device's
+    debug peripheral is initialized. Only connect to systems that cannot create
+    any damage while being halted! For example halting motor controllers may
+    damage motors!!
+
+
+### AvrDude
+
+Unfortunately AvrDude does not support a *project-specific* configuration file
+like OpenOCD does (only a undocumented user config in `~/.avrduderc`), so there
+is no convenient one-line command to issue. You have to use the wrapper support
+of the specific build system or simply call AvrDude yourself via its command
+line.
+
+
+### GDB
+
+A few commands are provided for convenience via the `modm/gdbinit` configuration:
+
+- `reset`: resets the device and halts.
+- `rerun`: resets the device and continues execution.
+- `modm_coredump`: Dumps all volatile memories into a `coredump.txt` file.
+                   See the `modm:platform:fault` module for details.
+- `modm_build_id`: Finds and prints the GNU build id of the firmware.
+
+GDB continues running the target after attaching, but *does not* load an ELF
+file! Please pass the ELF file as a command line argument.
+
+You can start your GDB session like so:
+
+~~~{.sh}
+arm-none-eabi-gdb -x modm/gdbinit path/to/project.elf
+~~~
+
+
+## Generic Python Tools
+
+We have written a number of pure Python tools to provide common functionality
+that get wrapped by the build system.
+
+Here is a selection of tools that have a command line interface, so you can call
+them even without build system support in case you have a special setup.
+Note that there are even more tools that can be called in Python only, so have
+a look in your generated `modm/modm_tools` folder.
+
+@note Add `modm_tools` to your Python path
+    To call `modm_tools` via module syntax, you need to add the generated modm
+    folder to your Python path: `export PYTHONPATH=path/to/generated/modm`.
+    You can also use the module in this repository directly.
+
+
+### AvrDude
+
+This tool simply wraps the `avrdude` command to provide two features:
+
+- guessing the serial port when a baudrate was set.
+- inspecting the ELF file to decide whether EEPROM needs to be programmed.
+
+~~~{.sh}
+python3 -m modm_tools.avrdude -p m328p -c arduino -P auto -b 57600 \\
+                              path/to/project.elf
+~~~
+
+[Fuses stored in the ELF file](http://avr-libc.nongnu.org/user-manual/group__avr__fuse.html)
+can be programmed by passing `--fuse` arguments:
+
+~~~{.sh}
+python3 -m modm_tools.avrdude -p m328p -c stk500v2 path/to/project.elf \\
+                              --fuse hfuse --fuse lfuse --fuse efuse
+~~~
+
+(\* *only AVR targets*)
+
+
+### OpenOCD
+
+Simply wraps OpenOCD and issues the right command to program the target.
+
+~~~{.sh}
+python3 -m modm_tools.openocd -f modm/openocd.cfg path/to/project.elf
+~~~
+
+You can also reset the target:
+
+~~~{.sh}
+python3 -m modm_tools.openocd -f modm/openocd.cfg --reset
+~~~
+
+You can use a different OpenOCD binary by setting the `MODM_OPENOCD_BINARY`
+environment variable before calling this script. This can be useful when
+using a custom OpenOCD build for specific targets.
+
+~~~{.sh}
+export MODM_OPENOCD_BINARY=/path/to/other/openocd
+~~~
+
+(\* *only ARM Cortex-M targets*)
+
+
+### Black Magic Probe
+
+This tool wraps GDB to program an ELF file onto a target connected to a BMP.
+You can explictly pass the serial port, or let the tool guess it.
+
+~~~{.sh}
+python3 -m modm_tools.bmp path/to/project.elf
+# or choose the port explicitly
+python3 -m modm_tools.bmp path/to/project.elf -p /dev/tty.usbserial-123
+~~~
+
+You can also reset the target:
+
+~~~{.sh}
+python3 -m modm_tools.bmp --reset
+~~~
+
+(\* *only ARM Cortex-M targets*)
+
+
+### GDB
+
+For debugging your program on ARM Cortex-M device, this Python tool wraps
+`arm-none-eabi-gdb` and connects it to a number of programmers running in the
+background or remotely.
+
+The tool can be called from the command line. Here is a typical use-case using
+the openocd backend with the common configuration files:
+
+~~~{.sh}
+python3 -m modm_tools.gdb --elf path/to/project.elf --ui=tui \
+                          -x modm/gdbinit -x modm/openocd_gdbinit \
+                          openocd -f modm/openocd.cfg
+~~~
+
+Or you can call the Python API directly:
+
+~~~{.python}
+import sys
+sys.path.append("modm")
+from modm_tools import gdb
+from modm_tools.openocd import OpenOcdBackend
+
+backend = OpenOcdBackend(config="modm/openocd.cfg")
+gdb.call(source="path/to/project.elf", backend=backend,
+         config=["modm/gdbinit", "modm/openocd_gdbinit"], ui="tui")
+~~~
+
+This configuration starts the OpenOCD process in the background for you,
+however, if you want to connect to an already running process, you can use the
+remote backend with the `--host={ip or hostname}` via the command line:
+
+~~~{.sh}
+# Extended-Remote running remotely
+python3 -m modm_tools.gdb --elf path/to/project.elf -x modm/gdbinit --ui=tui \
+                          remote --host 123.45.67.89
+~~~
+
+Note that you can use different programmer backends to GDB, for example the
+Black Magic Probe:
+
+~~~{.sh}
+# Black Magic Probe
+python3 -m modm_tools.gdb --elf path/to/project.elf -x modm/gdbinit --ui=tui \
+                          bmp --port /dev/tty.usbserial-123
+~~~
+
+To analyze a core dump, you can use the `CrashDebug` GDB backend.
+See the `modm:crashcatcher` module for details.
+
+~~~{.sh}
+# Using CrashDebug for Post-Mortem debugging
+python3 -m modm_tools.gdb --elf path/to/project.elf -x modm/gdbinit --ui=tui \
+                          crashdebug --dump coredump.txt
+~~~
+
+(\* *only ARM Cortex-M targets*)
+
+Currently three UIs are implemented for debugging:
+
+- `--ui=cmd`: No UI, only the GDB command shell.
+- `--ui=tui`: Text-based UI in your shell.
+- `--ui=gdbgui`: Web-based UI in your browser, based on [gdbgui][].
+
+
+#### Text UI
+
+This UI is builtin to GDB and is therefore always available.
+
+~~~
+   ┌——main.cpp———————————————————————————————————————————————————————┐
+  >│194             DRAW(x+1, y+3);                                  │
+   │195             DRAW(x+2, y+3);                                  │
+   │196     #else                                                    │
+   │197             DRAW(x  , y  );                                  │
+   │198     #endif                                                   │
+   │199     #undef DRAW                                              │
+   │200     }                                                        │
+   │201                                                              │
+   │202     static inline void drawScreen(framebuffer_t before, frame│
+   └—————————————————————————————————————————————————————————————————┘
+  >│0x80017a0 <game_of_life()+1692> strh.w r3, [r4, r12, lsl #1]     │
+   │0x80017a4 <game_of_life()+1696> add    r0, lr                    │
+   │0x80017a6 <game_of_life()+1698> ldr    r2, [r2, #0]              │
+   │0x80017a8 <game_of_life()+1700> strh.w r3, [r2, r0, lsl #1]      │
+   │0x80017ac <game_of_life()+1704> ldr    r3, [sp, #12]             │
+   │0x80017ae <game_of_life()+1706> ldr    r2, [sp, #0]              │
+   │0x80017b0 <game_of_life()+1708> add    r2, r3                    │
+   │0x80017b2 <game_of_life()+1710> ldrb   r3, [r7, r1]              │
+   │0x80017b4 <game_of_life()+1712> strb   r3, [r2, r1]              │
+   └—————————————————————————————————————————————————————————————————┘
+extended-r Remote target In: game_of_life         L194  PC: 0x80017a0
+
+Program received signal SIGINT, Interrupt.
+0x080017a0 in drawPixel (color=<optimized out>, y=42, x=578) at main.c
+(gdb)
+~~~
+
+@bug GDB can change terminal configuration
+    Sometimes GDB quits uncleanly and a part of the TUI configuration is not
+    reset, in particular, the terminal may not display carriage returns
+    correctly anymore. In this case, calling `stty sane` can reset the terminal
+    to its correct rendering state.
+
+
+#### Web UI
+
+This UI simply uses the [gdbgui][] project and works very well as an advanced
+IDE-independent debugging solution.
+
+![](https://github.com/cs01/gdbgui/raw/master/screenshots/gdbgui_animation.gif)
+
+[gdbgui]: https://www.gdbgui.com
+
+
+### Size Report
+
+Inspects the ELF file and generates a size report of the static usage of the
+device's memories. You must pass the available memory segments as a Python
+dictionary:
+
+~~~{.sh}
+python3 -m modm_tools.size path/to/project.elf \\
+    "[{'name': 'flash', 'access': 'rx', 'start': 134217728, 'size': 65536}, \\
+    {'name': 'sram1', 'access': 'rwx', 'start': 536870912, 'size': 20480}]"
+
+Program:   1.4 KiB /  64.0 KiB (2.2% used)
+(.build_id + .fastcode + .fastdata + .hardware_init + .rodata +
+ .table.copy.intern + .table.heap + .table.zero.intern + .text + .vector_rom)
+
+Data:      3.0 KiB /  20.0 KiB (15.1% used) = 20 B static (0.1%) + 3072 B stack (15.0%)
+(.bss + .fastdata + .stack)
+
+Heap:     17.0 KiB /  20.0 KiB (84.9% available)
+(.heap1)
+~~~
+
+(\* *only ARM Cortex-M targets*)
+
+
+### Information Tool
+
+This tool generates a set of source files containing information about the
+repository state.
+
+You can use the `--check-rebuild` flag to only write the output file when the
+information changed. This prevents unnecessary rebuilding and relinking.
+
+@warning Respect developers privacy
+    This information is placed into the firmware in **cleartext**, so it will
+    be trivial to extract from a memory dump. Consider this information public
+    as soon as it is uploaded to your target. Make sure you only use the
+    information you absolutely need!
+
+
+#### Git Information
+
+~~~{.sh}
+python3 -m modm_tools.info -o git_info.c -t git        [--check-rebuild]
+python3 -m modm_tools.info -o git_info.c -t git_status [--check-rebuild]
+~~~
+
+The `git_info(directory)` function returns a dictionary with these values:
+
+- `MODM_GIT_SHA`: commit hash: `%H`.
+- `MODM_GIT_SHA_ABBR`: short commit hash: `%h`.
+- `MODM_GIT_SUBJECT`: commit subject as text: `%s`.
+- `MODM_GIT_AUTHOR`: author name: `%an`.
+- `MODM_GIT_AUTHOR_EMAIL`: author email: `%ae`.
+- `MODM_GIT_AUTHOR_DATE`: authoring date: `%ad`.
+- `MODM_GIT_AUTHOR_DATE_TIMESTAMP`: authoring date as Unix timestamp: `%at`.
+- `MODM_GIT_COMMITTER`: committer name: `%cn`.
+- `MODM_GIT_COMMITTER_EMAIL`: committer email: `%ce`.
+- `MODM_GIT_COMMITTER_DATE`: committer date: `%cd`.
+- `MODM_GIT_COMMITTER_DATE_TIMESTAMP`: committer das as Unix timestamp: `%ct`.
+- `MODM_GIT_CONFIG_USER_NAME`: local user name: `user.name`.
+- `MODM_GIT_CONFIG_USER_EMAIL`: local user email: `user.email`.
+
+The `git_info(directory, with_status=True)` function returns these additional values:
+
+- `MODM_GIT_MODIFIED`: number of modified files: `M`.
+- `MODM_GIT_ADDED`: number of added files: `A`.
+- `MODM_GIT_DELETED`: number of deleted files: `D`.
+- `MODM_GIT_RENAMED`: number of renamed files: `R`.
+- `MODM_GIT_COPIED`: number of copied files: `C`.
+- `MODM_GIT_UNTRACKED`: number of untracked files: `?`.
+
+This example project is showing an unclean repository state with uncommitted
+changes. This can give you a few hints as to where a firmware came from and help
+you pinpoint the source of a bug or feature.
+
+~~~
+Local Git User:
+Name:  Name Surname
+Email: name.surname@example.com
+Last Commit:
+SHA:             1b5a9a642857182161a615039c92907e59881614
+Abbreviated SHA: 1b5a9a642
+Subject:         wip
+
+Author:
+Name:      Name Surname
+Email:     name.surname@example.com
+Date:      Tue Jul 17 22:23:20 2018 +0200
+Timestamp: 1531859000
+
+Committer:
+Name:      Name Surname
+Email:     name.surname@example.com
+Date:      Tue Jul 17 22:23:20 2018 +0200
+Timestamp: 1531859000
+
+File Status:
+Modified:  10
+Added:     0
+Deleted:   0
+Renamed:   0
+Copied:    0
+Untracked: 6
+~~~
+
+
+#### Build Information
+
+~~~{.sh}
+python3 -m modm_tools.info -o build_info.c -t build --compiler=gcc [--check-rebuild]
+~~~
+
+Generates a files with these values defined as `const char *` strings:
+
+- `MODM_BUILD_PROJECT_NAME`: as defined in the <a href="group__modm__build.html"><code>modm:build:project.name</code></a> option.
+- `MODM_BUILD_MACHINE`: machine information.
+- `MODM_BUILD_USER`: user information.
+- `MODM_BUILD_OS`: OS version string (best effort, may not be useful!).
+- `MODM_BUILD_COMPILER`: compiler information.
+
+Example output on macOS:
+
+~~~
+Project:  build_info
+Machine:  name.local
+User:     user
+OS:       macOS 10.14.6 (x86_64)
+Compiler: g++-10 10.2.0
+~~~
+
+
+### JLink
+
+Simply wraps JLinkGDBServer and issues the right command to program the target.
+
+~~~{.sh}
+python3 -m modm_tools.jlink -device STM32F469NI path/to/project.elf
+~~~
+
+You can also reset the target:
+
+~~~{.sh}
+python3 -m modm_tools.jlink -device STM32F469NI --reset
+~~~
+
+You can set the `MODM_JLINK_BINARY` environment variable to point this script to
+a specific `JLinkGDBServer` binary:
+
+~~~{.sh}
+export MODM_JLINK_BINARY=/path/to/other/JLinkGDBServer
+~~~
+
+(\* *only ARM Cortex-M targets*)
+
+
+### Unittest
+
+This tools scans a directory for files ending in `_test.hpp`, extracts their
+test cases and generates a source file containing the test runner.
+
+~~~{.sh}
+python3 -m modm_tools.unit_test path/containing/tests path/to/generated_runner.cpp
+~~~
+
+Note that the files containing unittests must contain *one* class that inherits
+from the `unittest::TestSuite` class, and test case names must begin with
+`test`:
+
+~~~{.cpp}
+class TestClass : public unittest::TestSuite
+{
+public:
+    void testCase1();
+}
+~~~
+
+
+### Logging via Single-Wire Output (SWO)
+
+Logging using the SWO protocol is supported by the `modm:platform:itm` module.
+You can use OpenOCD to receive the output, but you must manually supply the
+CPU frequency:
+
+~~~{.sh}
+python3 -m modm_tools.itm openocd -f modm/openocd.cfg --fcpu 48000000
+~~~
+
+JLink is also supported and can determine the CPU frequency automatically:
+
+~~~{.sh}
+python3 -m modm_tools.itm jlink -device STM32F469NI
+~~~
+
+(\* *only ARM Cortex-M targets*)
+
+
+### Logging via Real-Time Transport (RTT)
+
+Logging using the RTT protocol is supported by the `modm:platform:rtt` module.
+You can use OpenOCD to send and receive on a channel of your choice using the
+built-in Python telnet client:
+
+~~~{.sh}
+python3 -m modm_tools.rtt --channel 0 openocd -f modm/openocd.cfg
+~~~
+
+JLink is also supported and may have faster transfer rates:
+
+~~~{.sh}
+python3 -m modm_tools.rtt --channel 0 jlink -device STM32F469NI
+~~~
+
+(\* *only ARM Cortex-M targets*)
+
+
+### GNU Build-ID
+
+To extract the build ID from an ELF file:
+
+~~~{.sh}
+python3 -m modm_tools.build_id path/to/project.elf
+fa8918e6971ed783b25bff0ad11a0541be47a933
+~~~
+
+To copy the ELF file to a artifact cache:
+
+~~~{.sh}
+python3 -m modm_tools.build_id path/to/project.elf --cache path/to/folder
+# copies to `path/to/folder/fa8918e6971ed783b25bff0ad11a0541be47a933.elf`
+~~~
+
+(\* *only ARM Cortex-M targets*)
+
+
+### Bitmap
+
+This tool can convert P1 `.pbm` files into C++ source code.
+
+~~~{.sh}
+python3 -m modm_tools.bitmap image.pbm --outpath .
+# creates `image.hpp` and `image.cpp` in the CWD
+~~~
+
+
+### UF2 Converter
+
+UF2 is a [Microsoft file format](https://github.com/microsoft/uf2) to pass
+to a on-device bootloader.
+
+~~~{.sh}
+python3 -m modm_tools.elf2uf2 firmware.elf -o firmware.uf2 --target rp2040 \
+    --range 0x10000000:0x15000000:CONTENTS \
+    --range 0x20000000:0x20042000:NO_CONTENTS
+~~~
+
+(\* *only ARM Cortex-M targets*)
+
+## Module Options
+
+### modm:build:project.name: Project Name
+
+The project name defaults to the folder name you're calling lbuild from.
+
+It's used by your build system to name the executable and it may also be passed
+to your application via a string constant or CPP define.
+
+Generated with: `ThorDriveV0.1_Atmega328 in [String: src]`
+### modm:build:build.path: Build Path
+
+The build path is defaulted to `build/{modm:build:project.name}`.
+
+If you have a lot of embedded projects, you may want to change the build path
+to a *common* directory so that you don't have `build/` folders everywhere.
+Remember to add your build path to your `.gitignore`.
+
+You should use a relative path instead of an absolute one, so that this option
+still works for other developers.
+
+Generated with: `../build in [Path: build/src]`
+### modm:build:unittest.source: Path to directory containing unittests
+
+When this path is declared, the generated build script will compile **only** the
+unittests, not your application source code!
+You must use separate project configurations for compiling your unittest and
+application!
+
+Generated with: `[] in [Path]`
+### modm:build:image.source: Path to directory containing .pbm files
+
+
+
+Generated with: `[] in [Path]`
+### modm:build:info.git: Generate git repository state information
+
+- `Info`: generates information about the last commit.
+- `Info+Status`: like `Info` plus git file status.
+
+Generated with: `Disabled in [Disabled, Info, Info+Status]`
+### modm:build:info.build: Generate build state information
+
+
+
+Generated with: `no in [yes, no]`
+### modm:build:avrdude.programmer: AvrDude programmer
+
+
+
+Generated with: `"" in [String]`
+### modm:build:avrdude.port: AvrDude programmer port
+
+
+
+Generated with: `"" in [String]`
+### modm:build:avrdude.baudrate: AvrDude programmer baudrate
+
+
+
+Generated with: `0 in [0 ... +Inf]`
+### modm:build:avrdude.options: AvrDude programmer options
+
+
+
+Generated with: `"" in [String]`
+ */
