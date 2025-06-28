@@ -29,8 +29,8 @@ Remove onBoard Potentiometer if going to install external Potentiometer
 ---
 
 ## 🖼️ Hardware Preview
-![](Controller\Docs\Controller_ProtoV0_Front3d.png)
-![](Controller\Docs\Controller_ProtoV0_Back3d.png)
+![](Controller/Docs/Controller_ProtoV0_Front3d.png)
+![](Controller/Docs/Controller_ProtoV0_Back3d.png)
 
 ---
 
@@ -100,8 +100,8 @@ Upload: [`./Controller/Docs/*.step`](./Docs)
 
 ## 🖼️ Hardware Preview
 
-![](Inverter\Docs\ThorDriveInverter_ProtoV0_front.png)
-![](Inverter\Docs\ThorDriveInverter_ProtoV0_back.png)
+![](Inverter/Docs/ThorDriveInverter_ProtoV0_front.png)
+![](Inverter/Docs/ThorDriveInverter_ProtoV0_back.png)
 
 ---
 
