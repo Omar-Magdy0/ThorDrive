@@ -39,8 +39,8 @@
 #define HALL_C_INVERT true
 
 //HALT_LED PIN 
-#define HALT_LED_PinNum 13
-#define HALT_LED_INVERT true
+#define CTRL_LED_PinNum 13
+#define CTRL_LED_INVERT true
 
 //CTRL_BTN PIN 
 #define CTRL_BTN_PinNum 12
@@ -50,7 +50,7 @@
 
 //Controller Configuration
 #define SWITCHING_FREQ 10000
-#define accelleration_pps 1 //Accelleration in percentage per second (percentage from full speed) 
-#define minSpeed_perc 5 //Minimum duty cycle percentage for the motor to start
-#define maxSpeed_perc 90 //Maximum duty cycle percentage for the motor to run (Check bootstrap high side drive limits)
-#define POLE_PAIRS 1
+#define accelleration_pps 2 //Accelleration in percentage per second (percentage from full speed) 
+#define minSpeed_duty 0.05 //Minimum duty cycle percentage for the motor to start
+#define maxSpeed_duty 0.9 //Maximum duty cycle percentage for the motor to run (Check bootstrap high side drive limits)
+#define POLE_PAIRS 23
