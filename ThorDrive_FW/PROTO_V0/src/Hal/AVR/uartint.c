@@ -247,7 +247,6 @@ size_t uartint_receiveBurst(uint8_t* data, size_t len)
 ISR(USART_UDRE_vect)
 {
     uint8_t c;
-    
     if(!ring_pop((Ring_t*)&uartint_transmitBuf, &c))
         UDR0 = c;
     //stop transmitter when there is not data to be transmitted

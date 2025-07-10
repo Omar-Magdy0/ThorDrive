@@ -19,8 +19,6 @@ void TIM1Pwm_init(uint32_t frequency) {
     // Set PWM frequency (Phase Correct: f = f_CPU / (2 * N * TOP))
     ICR1 = TIMER1_TOP(frequency);
     
-    // Enable Timer1 Overflow Interrupt (triggers at TOP)
-    TIMSK1 |= (1 << TOIE1);
 }
 
 uint16_t TIM1Pwm_max(){
@@ -43,7 +41,13 @@ void TIM1BPwm_init(bool invert) {
     OCR1B = 0; // Initialize duty cycle to 0
 }
 
-void TIM1APwm_duty(uint16_t val) {
+void TIM1Pwm_ScaleToMax(uint16_t* duty_UQ16, uint16_t size){
+    for(uint16_t i = 0; i < size; i++){
+        duty_UQ16[i] = uint32_t(duty_UQ16[i] * ICR1) >> 16;
+    }
+};
+
+void TIM1APwm_duty(uint16_t val){
     OCR1A = val;
 }
 

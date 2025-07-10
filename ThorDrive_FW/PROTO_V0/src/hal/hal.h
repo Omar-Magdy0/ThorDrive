@@ -1,31 +1,33 @@
 #pragma once
-
-#include "adc.h"
-#include "GPIO.h"
-#include "TIM0.h"
-#include "TIM1.h"
-#include "TIM2_sys.h"
-#include "PCINT.h"
-#include "Config.h"
-#include <avr/interrupt.h>
-#include <avr/io.h>
+#include "AVR/hal.h"
 
 
-#ifdef __cplusplus
-extern "C" {
-#endif
 
-#include "hal/uartint.h"
-#include "hal/adc.h"
 
-#ifdef __cplusplus
-}
-#endif
+enum class Platform: uint32_t{
+    AVR_Mega328,
 
-static inline void hal_init(void)
-{
-    gpio_Init();
-    adc_init();
-    uartint_init(SerialBaud);
-    sei();
-}
+};
+
+
+template<Platform platform>
+class IHalTraits{
+
+};
+
+template<typename Derived>
+class IUart{
+
+};
+
+
+template<typename Derived>
+class ISpi{
+
+};
+
+template<typename Derived>
+class IHal{
+    
+};
+
